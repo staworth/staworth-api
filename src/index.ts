@@ -17,7 +17,7 @@ app.use(cors());
 app.get('/', (req: Request, res: Response) => {
   res.json({
     name: 'Staworth API (TypeScript)',
-    description: 'TypeScript Express server for Habeas Data services using x402 payments',
+    description: 'Simple REST API for service of Staworth\'s datasets to our various web applications.',
     status: 'ok',
     endpoints: {
       'GET /health': 'Health check.',

@@ -1,7 +1,7 @@
 {
   "name": "staworth-api",
   "version": "1.0.0",
-  "description": "API for Staworth accounts and data",
+  "description": "Simple REST API for service of Staworth's datasets to our various web applications. Using Express.js + TypeScript.",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
