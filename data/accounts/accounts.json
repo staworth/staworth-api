@@ -1,0 +1,20 @@
+{
+    "0x72e7197da72fbc51828fa82cba8683bf0b6acf5e": {
+        "address": "0x72e7197da72fbc51828fa82cba8683bf0b6acf5e",
+        "ens": "staworth.eth",
+        "chains": ["ethereum", "optimism", "gnosis", "base", "polygon"],
+        "created": "2024-03-14"
+    },
+    "0xc12f8881f4a33078563bd968fc1df9f9458eaeea":{
+        "address": "0xc12f8881f4a33078563bd968fc1df9f9458eaeea",
+        "ens": "treasury.staworth.eth",
+        "chains": ["ethereum", "optimism", "gnosis", "base"],
+        "created": "2025-02-15"
+    },
+    "0x76c32ef9587b07c77545ad1a86e02fc1f045a3b9": {
+        "address": "0x76c32ef9587b07c77545ad1a86e02fc1f045a3b9",
+        "ens": "governance.staworth.eth",
+        "chains": ["ethereum", "optimism", "gnosis"],
+        "created": "2024-05-11"
+    }
+}

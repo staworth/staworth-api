@@ -1,0 +1,15 @@
+node_modules
+dist
+.env
+*.log
+.cache
+.vscode/
+build/
+out/
+*.tsbuildinfo
+coverage/
+.nyc_output/
+tmp/
+temp/
+.cache/
+.DS_Store
