@@ -1,0 +1,82 @@
+{
+  "Beefy's Profitability Problem": {
+    "link": "https://mirror.xyz/jackgale.eth/L6hcKY_fBuzNu_IFCaBNy5zRcPSqnuaJIhqmlWn0lII",
+    "title": "Beefy's Profitability Problem",
+    "date": "21 August 2024",
+    "category": "BEEFY",
+    "description": "Treatise on the right approach to reinvesting profits in the Beefy DAO, accompanying proposals for a new profit distribution framework and incentives scheme.",
+    "image": "/images/articles/grey-shapes-15.png"
+  },
+  "Training Wheels Off - Unleashing CLM with LTIPP on Arbitrum": {
+    "link": "https://beefy.com/articles/ltipp/",
+    "title": "Training Wheels Off - Unleashing CLM with LTIPP on Arbitrum",
+    "date": "12 June 2024",
+    "category": "BEEFY",
+    "description": "Dive into the full launch of the new Cowcentrated Liquidity Manager (CLM), and Beefy's Long Term Incentives Pilot Program campaign taking place on Arbitrum this summer.",
+    "image": "/images/articles/beefy-ltipp.png"
+  },
+  "Introducing: Staworth": {
+    "link": "https://mirror.xyz/staworth.eth/T6K_aBMbkFLzIIluCSFIY0FoiOF3qaG4b_uFG4sc6Lw",
+    "title": "Introducing: Staworth",
+    "date": "31 May 2024",
+    "category": "STAWORTH",
+    "description": "A brief introduction to Staworth Limited - 'staunch advocacy for digital communities'. Read about the principles we're built on and our journey through to launch.",
+    "image": "/logos/Staworth_16_9_Black.png"
+  },
+  "Recursive Returns with Beefy on Fraxtal": {
+    "link": "https://beefy.com/articles/fraxtal/",
+    "title": "Recursive Returns with Beefy on Fraxtal",
+    "date": "4 April 2024",
+    "category": "BEEFY",
+    "description": "Celebrating the launch of Beefy on its 26th blockchain - Fraxtal. A deep exploration of the new ecosystem and the philosophy underlying Frax's plans for a future DeFi paradise.",
+    "image": "/images/articles/fraxtal.png"
+  },
+  "Beefy Annual Report 2023": {
+    "link": "https://jumpshare.com/v/OMlUmrQSYknnpOC7b14c",
+    "title": "Beefy Annual Report 2023",
+    "date": "20 February 2024",
+    "category": "BEEFY",
+    "description": "Concluding the first year of financial reporting for Beefy DAO, the 2023 report highlights the DAO's activities and financial performance over the last 12 months.",
+    "image": "/images/articles/beefy-annual-report-2023.jpg"
+  },
+  "Karpatkey DAO: Strategic Significance": {
+    "link": "https://mirror.xyz/jackgale.eth/0-0hFdJBkoj9YTk0vJyL8J3eQym44ZkTm5TfzIsX5mc",
+    "title": "Karpatkey DAO: Strategic Significance",
+    "date": "16 February 2024",
+    "category": "KPK",
+    "description": "Exploring the launch of Karpatkey DAO, the next chapter for one of the largest Web 3.0 treasury and risk management providers, and reasons for choosing to launch as a DAO in 2024.",
+    "image": "/images/articles/grey-shapes-1.png"
+  },
+  "The Next Level: ZAP V3 with Beefy × Optimism × KyberSwap": {
+    "link": "https://beefy.com/articles/zap-v3/",
+    "title": "The Next Level: ZAP V3 with Beefy × Optimism × KyberSwap",
+    "date": "4 December 2023",
+    "category": "BEEFY",
+    "description": "Delivering the next generation of accessibility tooling, in tandem with the largest launch campaign we've ever done.",
+    "image": "/images/articles/zap-v3.png"
+  },
+  "The Next Generation: Crosschain Yield Optimization with Beefy x LayerZero x Aura": {
+    "link": "https://beefy.com/articles/lz-aura/",
+    "title": "The Next Generation: Crosschain Yield Optimization with Beefy x LayerZero x Aura",
+    "date": "13 September 2023",
+    "category": "BEEFY",
+    "description": "Announcing a paradigm shift in Beefy's product lineup, with the introduction of LayerZero crosschain strategies in partnership with Aura Finance.",
+    "image": "/images/articles/lz-aura.png"
+  },
+  "Creative Destruction, Concentrated Liquidity and Beefy's Next Generation": {
+    "link": "https://beefy.com/articles/beefy-cl/",
+    "title": "Creative Destruction, Concentrated Liquidity and Beefy's Next Generation",
+    "date": "30 June 2023",
+    "category": "BEEFY",
+    "description": "Concentrated liquidity has arrived on Beefy, meaning higher yields and more efficient liquidity than ever before. Learn all about our latest vaults built with Gamma and Algebra.",
+    "image": "/images/articles/beefy-cl.jpeg"
+  },
+  "Safeguarding in Plain Sight: The Beefy Timelock Monitor": {
+    "link": "https://beefy.com/articles/safeguarding-in-plain-sight-the-beefy-timelock-monitor/",
+    "title": "Safeguarding in Plain Sight: The Beefy Timelock Monitor",
+    "date": "7 March 2023",
+    "category": "BEEFY",
+    "description": "Discover the secrets of Beefy's risk management efforts for yourself with our latest public information feed.",
+    "image": "/images/articles/timelock-monitor.png"
+  }
+}

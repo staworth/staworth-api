@@ -1,0 +1,57 @@
+{
+  "Staworth.com": {
+    "link": "https://staworth.com",
+    "img": "/images/links/www.png",
+    "label": "Staworth.com"
+  },
+  "Staworth Limited": {
+    "link": "https://find-and-update.company-information.service.gov.uk/company/15540474",
+    "img": "/images/links/hm.png",
+    "label": "Staworth Limited"
+  },
+  "Staworth.eth": {
+    "link": "https://app.ens.domains/staworth.eth",
+    "img": "/images/links/ethereum.png",
+    "label": "Staworth.eth"
+  },
+  "GitHub": {
+    "link": "https://github.com/Staworth",
+    "img": "/images/links/github.png",
+    "label": "GitHub"
+  },
+  "X": {
+    "link": "https://twitter.com/staworth",
+    "img": "/images/links/x.png",
+    "label": "X"
+  },
+  "LinkedIn": {
+    "link": "https://www.linkedin.com/company/staworth/",
+    "img": "/images/links/linkedin.png",
+    "label": "LinkedIn"
+  },
+  "Mirror": {
+    "link": "https://mirror.xyz/staworth.eth",
+    "img": "/images/links/mirror.png",
+    "label": "Mirror"
+  },
+  "Farcaster": {
+    "link": "https://warpcast.com/staworth",
+    "img": "/images/links/farcaster.png",
+    "label": "Farcaster"
+  },
+  "YouTube": {
+    "link": "https://www.youtube.com/@Staworth",
+    "img": "/images/links/youtube.png",
+    "label": "YouTube"
+  },
+  "Snapshot": {
+    "link": "https://snapshot.org/#/profile/0x76c32eF9587b07c77545Ad1a86E02fC1f045a3b9",
+    "img": "/images/links/snapshot.png",
+    "label": "Snapshot"
+  },
+  "DeBank": {
+    "link": "https://debank.com/profile/0x72E7197DA72FbC51828fa82CBa8683Bf0B6acf5e",
+    "img": "/images/links/debank.png",
+    "label": "DeBank"
+  }
+}

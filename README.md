@@ -28,7 +28,7 @@ The server will run on `http://localhost:3001` by default.
 |--------|----------|-------------|
 | GET | `/` | API information and available endpoints |
 | GET | `/health` | Health check - returns server status |
-| GET | `/api/accounts` | Summary of Staworth's onchain accounts |
+| GET | `/accounts` | Summary of Staworth's onchain accounts |
 
 ## Dependencies
 

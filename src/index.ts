@@ -3,6 +3,8 @@ import type { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import accountsRoutes from './routes/accountsRoutes.js';
+import articlesRoutes from './routes/articlesRoutes.js';
+import linksRoutes from './routes/linksRoutes.js';
 
 dotenv.config();
 
@@ -21,7 +23,9 @@ app.get('/', (req: Request, res: Response) => {
     status: 'ok',
     endpoints: {
       'GET /health': 'Health check.',
-      'GET /api/accounts': "Summary of Staworth's onchain accounts.",
+      'GET /accounts': "Summary of Staworth's onchain accounts.",
+      'GET /articles': "Staworth's published articles.",
+      'GET /links': "Staworth's important links.",
     }
   });
 });
@@ -31,12 +35,16 @@ app.get('/health', (req: Request, res: Response) => {
 });
 
 // API routes
-app.use('/api/accounts', accountsRoutes);
+app.use('/accounts', accountsRoutes);
+app.use('/articles', articlesRoutes);
+app.use('/links', linksRoutes);
 
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log(`\nEndpoints:`);
   console.log(`  • GET  /health                       - Health check`);
-  console.log(`  • GET  /api/accounts                 - Summary of Staworth's onchain accounts`);
+  console.log(`  • GET  /accounts                     - Summary of Staworth's onchain accounts`);
+  console.log(`  • GET  /articles                     - Staworth's published articles`);
+  console.log(`  • GET  /links                        - Staworth's important links`);
 });
