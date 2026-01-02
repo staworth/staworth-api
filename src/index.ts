@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import accountsRoutes from './routes/accountsRoutes.js';
 import articlesRoutes from './routes/articlesRoutes.js';
 import linksRoutes from './routes/linksRoutes.js';
+import portfolioRoutes from './routes/portfolioRoutes.js';
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.get('/', (req: Request, res: Response) => {
       'GET /accounts': "Summary of Staworth's onchain accounts.",
       'GET /articles': "Staworth's published articles.",
       'GET /links': "Staworth's important links.",
+      'GET /portfolio': "Staworth's portfolio holdings.",
     }
   });
 });
@@ -38,6 +40,7 @@ app.get('/health', (req: Request, res: Response) => {
 app.use('/accounts', accountsRoutes);
 app.use('/articles', articlesRoutes);
 app.use('/links', linksRoutes);
+app.use('/portfolio', portfolioRoutes);
 
 // Start server
 app.listen(PORT, () => {
@@ -47,4 +50,5 @@ app.listen(PORT, () => {
   console.log(`  • GET  /accounts                     - Summary of Staworth's onchain accounts`);
   console.log(`  • GET  /articles                     - Staworth's published articles`);
   console.log(`  • GET  /links                        - Staworth's important links`);
+  console.log(`  • GET  /portfolio                    - Staworth's portfolio holdings`);
 });
