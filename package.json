@@ -7,7 +7,9 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:nxm": "vitest src/services/blockchain/nxm.test.ts",
+    "test:portfolio": "vitest src/services/portfolio/portfolioUpdater.test.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",

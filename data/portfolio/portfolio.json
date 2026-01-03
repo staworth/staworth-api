@@ -1,17 +1,21 @@
 {
-    "bifi": {
-        "balance": 37.697,
-        "value": 5693.29
-    },
     "gno": {
-        "balance": 165.379,
-        "value": 22340.59
+        "balance": 165.380,
+        "value": 22266.43
+    },
+    "nxm": {
+        "balance": 158.890,
+        "value": 12139.20
     },
     "eth": {
         "balance": 3.113,
         "value": 7266.96
     },
+    "bifi": {
+        "balance": 37.698,
+        "value": 5684.82
+    },
     "total": {
-        "value": 35300.84
+        "value": 47357.41
     }
 }
