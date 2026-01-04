@@ -15,7 +15,7 @@
   "crons": [
     {
       "path": "/portfolio/update",
-      "schedule": "*/6 * * * *"
+      "schedule": "0 * * * *"
     }
   ]
 }
