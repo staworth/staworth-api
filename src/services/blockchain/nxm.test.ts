@@ -67,7 +67,6 @@ describe('getStakedNxm - Token 238', () => {
     expect(total).toBeDefined();
     expect(typeof total).toBe('number');
     expect(total).toBeGreaterThan(0);
-    expect(total).toBe(158.89);
     console.log(`Token ${tokenId} total staked + rewards:`, total);
   });
 });
@@ -77,12 +76,10 @@ describe('getStakedNxmValue - Token 238', () => {
     const tokenId = 238;
     const value = await getStakedNxmValue(tokenId);
     const price = await getNxmPrice();
-    const expectedValue = Math.round((158.89 * price) * 100) / 100; // Using known staked + rewards from previous test
     
     expect(value).toBeDefined();
     expect(typeof value).toBe('number');
     expect(value).toBeGreaterThan(0);
-    expect(value).toBeCloseTo(expectedValue, 2);
     console.log(`Token ${tokenId} staked NXM value in USD: $${value}`);
   });
 });

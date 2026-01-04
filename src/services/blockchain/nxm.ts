@@ -1,8 +1,11 @@
-import { Web3 } from 'web3';
-import contracts from '../../utils/contracts.json' with { type: 'json' };
+import { getWeb3 } from '../../utils/getWeb3.js';
+import { getPrice } from '../../utils/getPrice.js';
+import contracts from '../../../data/contracts/contracts.json' with { type: 'json' };
+import type { Contracts } from '../../types/contract.js';
 
-const { abi: ethNxmAbi, address: ethNxmAddress } = contracts.ethNxm ?? {};
-const { abi: nxmStakingNftAbi, address: nxmStakingNftAddress } = contracts.nxmStakingNFT ?? {};
+const typedContracts = contracts as unknown as Contracts;
+const ethNxm = typedContracts.ethNxm!;
+const nxmStakingNft = typedContracts.nxmStakingNFT!;
 
 // Types
 interface NxmStakingMetadata {
@@ -14,20 +17,20 @@ interface NxmStakingMetadata {
 // ETH NXM Functions
 
 async function getEthNxmBalance(walletAddress: string): Promise<number> {
-    const web3 = new Web3(`https://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_RPC_KEY}`);
-    if (!ethNxmAbi || !ethNxmAddress) {
+    const web3 = getWeb3(ethNxm.chain);
+    if (!ethNxm?.abi || !ethNxm?.address) {
         throw new Error('Error: ethNxm contract ABI or address is missing');
     }
-    const ethNxm = new web3.eth.Contract(ethNxmAbi as any[], ethNxmAddress);
-    const balanceRaw = await (ethNxm.methods.balanceOf as any)(walletAddress).call() as string;
+    const ethNxmContract = new web3.eth.Contract(ethNxm.abi, ethNxm.address);
+    const balanceRaw = await (ethNxmContract.methods.balanceOf as any)(walletAddress).call() as string;
     return Math.round((Number(balanceRaw) / 1e18) * 1000) / 1000;
 }
 
 async function getNxmPrice(): Promise<number> {
-    const response = await fetch('https://api.coingecko.com/api/v3/simple/price?vs_currencies=usd&symbols=nxm');
-    const data = await response.json() as { nxm: { usd: number } };
-    const price = data.nxm.usd;
-    console.log(`NXM Price: $${price}`);
+    if (!ethNxm?.price_symbol || !ethNxm?.price_source) {
+        throw new Error('Error: NXM price symbol or source is missing from contracts config');
+    }
+    const price = await getPrice(ethNxm.price_symbol, ethNxm.price_source);
     return price;
 }
 
@@ -44,12 +47,12 @@ async function getEthNxmValue(walletAddress: string): Promise<number> {
 // NXM Staking NFT Functions
 
 async function getNxmStakingNftUri( tokenId: number ): Promise<NxmStakingMetadata> {
-    const web3 = new Web3(`https://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_RPC_KEY}`);
-    if (!nxmStakingNftAbi || !nxmStakingNftAddress) {
+    const web3 = getWeb3(nxmStakingNft.chain);
+    if (!nxmStakingNft?.abi || !nxmStakingNft?.address) {
         throw new Error('Error: nxmStakingNft contract ABI or address is missing');
     }
-    const nxmStakingNft = new web3.eth.Contract(nxmStakingNftAbi as any[], nxmStakingNftAddress);
-    const uriRaw = await (nxmStakingNft.methods.tokenURI as any)(tokenId).call() as string;
+    const nxmStakingNftContract = new web3.eth.Contract(nxmStakingNft.abi, nxmStakingNft.address);
+    const uriRaw = await (nxmStakingNftContract.methods.tokenURI as any)(tokenId).call() as string;
     const encodedData = uriRaw.split(',')[1];
     if (!encodedData) {
         throw new Error('Error: encodedData is undefined');
@@ -69,9 +72,6 @@ async function getStakedNxmBalance( tokenId: number ): Promise<number> {
     const staked = stakedMatch ? parseFloat(stakedMatch[1]!) : 0;
     const rewards = rewardsMatch ? parseFloat(rewardsMatch[1]!) : 0;
     
-    console.log(`Staked: ${staked}`);
-    console.log(`Rewards: ${rewards}`);
-    
     return staked + rewards;
 }
 
@@ -79,7 +79,6 @@ async function getStakedNxmValue( tokenId: number ): Promise<number> {
     const totalNxm = await getStakedNxmBalance(tokenId);
     const nxmPrice = await getNxmPrice();
     const totalValue = parseFloat((totalNxm * nxmPrice).toFixed(2));
-    console.log(`Total NXM Value: $${totalValue.toFixed(2)}`);
     return totalValue;
 }
 

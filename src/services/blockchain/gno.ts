@@ -1,27 +1,32 @@
-import { Web3 } from 'web3';
-import contracts from '../../utils/contracts.json' with { type: 'json' };
+import { getWeb3 } from '../../utils/getWeb3.js';
+import { getPrice } from '../../utils/getPrice.js';
+import contracts from '../../../data/contracts/contracts.json' with { type: 'json' };
+import type { Contracts } from '../../types/contract.js';
 
-const { abi: ethGnoAbi, address: ethGnoAddress } = contracts.ethGno ?? {};
-const { abi: gnoGnoAbi, address: gnoGnoAddress } = contracts.gnoGno ?? {};
-const { abi: gnoOsGnoAbi, address: gnoOsGnoAddress } = contracts.gnoOsGno ?? {};
-const { abi: gnoOsGnoGenesisVaultAbi, address: gnoOsGnoGenesisVaultAddress } = contracts.gnoOsGnoGenesisVault ?? {};
+const typedContracts = contracts as unknown as Contracts;
+const ethGno = typedContracts.ethGno!;
+const gnoGno = typedContracts.gnoGno!;
+const gnoOsGno = typedContracts.gnoOsGno!;
+const gnoOsGnoGenesisVault = typedContracts.gnoOsGnoGenesisVault!;
 
 // ETH GNO Functions
 
 async function getEthGnoBalance(walletAddress: string): Promise<number> {
-    const web3 = new Web3(`https://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_RPC_KEY}`);
-    if (!ethGnoAbi || !ethGnoAddress) {
+    const web3 = getWeb3(ethGno.chain);
+    if (!ethGno?.abi || !ethGno?.address) {
         throw new Error('Error: ethGno contract ABI or address is missing');
     }
-    const ethGno = new web3.eth.Contract(ethGnoAbi as any[], ethGnoAddress);
-    const balanceRaw = await (ethGno.methods.balanceOf as any)(walletAddress).call() as string;
+    const ethGnoContract = new web3.eth.Contract(ethGno.abi, ethGno.address);
+    const balanceRaw = await (ethGnoContract.methods.balanceOf as any)(walletAddress).call() as string;
     return Math.round((Number(balanceRaw) / 1e18) * 1000) / 1000;
 }
 
 async function getGnoPrice(): Promise<number> {
-    const response = await fetch(`https://api.beefy.finance/prices`);
-    const data = await response.json() as { GNO: number };
-    return data.GNO;
+    if (!ethGno?.price_symbol || !ethGno?.price_source) {
+        throw new Error('Error: GNO price symbol or source is missing from contracts config');
+    }
+    const price = await getPrice(ethGno.price_symbol, ethGno.price_source);
+    return price;
 }
 
 async function getEthGnoValue(walletAddress: string): Promise<number> {
@@ -37,12 +42,12 @@ async function getEthGnoValue(walletAddress: string): Promise<number> {
 // Gnosis GNO Functions
 
 async function getGnoGnoBalance(walletAddress: string): Promise<number> {
-    const web3 = new Web3(`https://gnosis-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_RPC_KEY}`);
-    if (!gnoGnoAbi || !gnoGnoAddress) {
+    const web3 = getWeb3(gnoGno.chain);
+    if (!gnoGno?.abi || !gnoGno?.address) {
         throw new Error('Error: gnoGno contract ABI or address is missing');
     }
-    const gnoGno = new web3.eth.Contract(gnoGnoAbi as any[], gnoGnoAddress);
-    const balanceRaw = await (gnoGno.methods.balanceOf as any)(walletAddress).call() as string;
+    const gnoGnoContract = new web3.eth.Contract(gnoGno.abi, gnoGno.address);
+    const balanceRaw = await (gnoGnoContract.methods.balanceOf as any)(walletAddress).call() as string;
     return Math.round((Number(balanceRaw) / 1e18) * 1000) / 1000;
 }
 
@@ -59,23 +64,22 @@ async function getGnoGnoValue(walletAddress: string): Promise<number> {
 // Gnosis osGNO Functions
 
 async function getGnoOsGnoBalance( walletAddress: string ): Promise<number> {
-    const web3 = new Web3(`https://gnosis-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_RPC_KEY}`);
-    if (!gnoOsGnoAbi || !gnoOsGnoAddress) {
+    const web3 = getWeb3(gnoOsGno.chain);
+    if (!gnoOsGno?.abi || !gnoOsGno?.address) {
         throw new Error('Error: gnoOsGno contract ABI or address is missing');
     }
-    console.log(gnoOsGnoAddress)
-    const gnoOsGno = new web3.eth.Contract(gnoOsGnoAbi as any[], gnoOsGnoAddress);
-    const balanceRaw = await (gnoOsGno.methods.balanceOf as any)(walletAddress).call() as string;
+    const gnoOsGnoContract = new web3.eth.Contract(gnoOsGno.abi, gnoOsGno.address);
+    const balanceRaw = await (gnoOsGnoContract.methods.balanceOf as any)(walletAddress).call() as string;
     return Math.round((Number(balanceRaw) / 1e18) * 1000) / 1000;
 }
 
 async function getOsGnoPpfs(): Promise<number> {
-    const web3 = new Web3(`https://gnosis-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_RPC_KEY}`);
-    if (!gnoOsGnoGenesisVaultAbi || !gnoOsGnoGenesisVaultAddress) {
+    const web3 = getWeb3(gnoOsGnoGenesisVault.chain);
+    if (!gnoOsGnoGenesisVault?.abi || !gnoOsGnoGenesisVault?.address) {
         throw new Error('Error: gnoOsGnoGenesisVault contract ABI or address is missing');
     }
-    const gnoOsGnoVault = new web3.eth.Contract(gnoOsGnoGenesisVaultAbi as any[], gnoOsGnoGenesisVaultAddress);
-    const ppfs = await (gnoOsGnoVault.methods.convertToAssets as any)(1e18).call() as string;
+    const gnoOsGnoVaultContract = new web3.eth.Contract(gnoOsGnoGenesisVault.abi, gnoOsGnoGenesisVault.address);
+    const ppfs = await (gnoOsGnoVaultContract.methods.convertToAssets as any)(1e18).call() as string;
     return Number(ppfs) / 1e18;
 }
 

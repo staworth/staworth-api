@@ -1,14 +1,12 @@
-import { Web3 } from 'web3';
-import contracts from '../../utils/contracts.json' with { type: 'json' };
+import { getWeb3 } from '../../utils/getWeb3.js';
+import { getPrice } from '../../utils/getPrice.js';
+import contracts from '../../../data/contracts/contracts.json' with { type: 'json' };
+import type { Contracts } from '../../types/contract.js';
 
-const { abi: ethMooBifiAbi, address: ethMooBifiAddress } = contracts.ethMooBifi ?? {};
-const { abi: opMooBifiAbi, address: opMooBifiAddress } = contracts.opMooBifi ?? {};
-const { abi: opBifiEthLpAbi, address: opBifiEthLpAddress } = contracts.opBifiEthLp ?? {};
-
-interface PriceDataPoint {
-  v: number;
-  t: number;
-}
+const typedContracts = contracts as unknown as Contracts;
+const ethMooBifi = typedContracts.ethmooBIFI!;
+const opMooBifi = typedContracts.opmooBIFI!;
+const opBifiEthLp = typedContracts.opBifiEthLp!;
 
 interface PpfsResponse {
   priceRows: Array<{
@@ -20,30 +18,31 @@ interface PpfsResponse {
 // ETH BIFI Functions
 
 async function getBifiPrice(): Promise<number> {
-  const response = await fetch(`https://api.beefy.finance/prices`);
-  if (!response.ok) {
-    throw new Error(`Error fetching BIFI price: ${response.status} ${response.statusText}`);
+  if (!ethMooBifi?.price_symbol || !ethMooBifi?.price_source) {
+    throw new Error('Error: BIFI price symbol or source is missing from contracts config');
   }
-  const data = await response.json() as { BIFI: number };
-  return data.BIFI;
+  const price = await getPrice(ethMooBifi.price_symbol, ethMooBifi.price_source);
+  return price;
 }
 
 // ETH mooBIFI Functions
 
 async function getEthMooBifiBalance( walletAddress: string ): Promise<bigint> {
-    const web3 = new Web3(`https://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_RPC_KEY}`);
-    if (!ethMooBifiAbi || !ethMooBifiAddress) {
-        throw new Error('Error: ethMooBifi contract ABI or address is missing');
-    }
-    const ethMooBifi = new web3.eth.Contract(ethMooBifiAbi as any[], ethMooBifiAddress);
-    const balanceRaw = await (ethMooBifi.methods.balanceOf as any)(walletAddress).call() as string;
-    return BigInt(balanceRaw);
+  const web3 = getWeb3(ethMooBifi.chain);
+  if (!ethMooBifi?.abi || !ethMooBifi?.address) {
+    throw new Error('Error: ethMooBifi contract ABI or address is missing');
+  }
+  const ethMooBifiContract = new web3.eth.Contract(ethMooBifi.abi, ethMooBifi.address);
+  const balanceRaw = await (ethMooBifiContract.methods.balanceOf as any)(walletAddress).call() as string;
+  return BigInt(balanceRaw);
 }
 
 async function getMooBifiPrice(): Promise<number> {
-    const response = await fetch(`https://api.beefy.finance/prices`);
-    const data = await response.json() as { mooBIFI: number };
-    return data.mooBIFI;
+  if (!ethMooBifi?.price_symbol || !ethMooBifi?.price_source) {
+    throw new Error('Error: mooBIFI price symbol or source is missing from contracts config');
+  }
+  const price = await getPrice(ethMooBifi.price_symbol, ethMooBifi.price_source);
+  return price;
 }
 
 async function getEthMooBifiValue( walletAddress: string ): Promise<number> {
@@ -59,12 +58,12 @@ async function getEthMooBifiValue( walletAddress: string ): Promise<number> {
 // ETH mooBIFI (Underlying BIFI) Functions
 
 async function getMooBifiPpfs(): Promise<number> {
-    const web3 = new Web3(`https://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_RPC_KEY}`);
-    if (!ethMooBifiAbi || !ethMooBifiAddress) {
-        throw new Error('Error: ethMooBifi contract ABI or address is missing');
-    }
-    const ethMooBifi = new web3.eth.Contract(ethMooBifiAbi as any[], ethMooBifiAddress);
-    const ppfs = await (ethMooBifi.methods.getPricePerFullShare as any)().call() as string;
+  const web3 = getWeb3(ethMooBifi.chain);
+  if (!ethMooBifi?.abi || !ethMooBifi?.address) {
+    throw new Error('Error: ethMooBifi contract ABI or address is missing');
+  }
+  const ethMooBifiContract = new web3.eth.Contract(ethMooBifi.abi, ethMooBifi.address);
+  const ppfs = await (ethMooBifiContract.methods.getPricePerFullShare as any)().call() as string;
     return Number(ppfs) / 1e18;
 }
 
@@ -78,12 +77,12 @@ async function getEthMooBifiBifiBalance( walletAddress: string ): Promise<number
 // OP mooBIFI Functions
 
 async function getOpMooBifiBalance( walletAddress: string ): Promise<bigint> {
-  const web3 = new Web3(`https://opt-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_RPC_KEY}`);
-  if (!opMooBifiAbi || !opMooBifiAddress) {
+  const web3 = getWeb3(opMooBifi.chain);
+  if (!opMooBifi?.abi || !opMooBifi?.address) {
     throw new Error('Error: opMooBifi contract ABI or address is missing');
   }
-  const opMooBifi = new web3.eth.Contract(opMooBifiAbi as any[], opMooBifiAddress);
-  const balanceRaw = await (opMooBifi.methods.balanceOf as any)(walletAddress).call() as string;
+  const opMooBifiContract = new web3.eth.Contract(opMooBifi.abi, opMooBifi.address);
+  const balanceRaw = await (opMooBifiContract.methods.balanceOf as any)(walletAddress).call() as string;
   return BigInt(balanceRaw);
 }
 
@@ -110,37 +109,31 @@ async function getOpMooBifiBifiBalance( walletAddress: string ): Promise<number>
 // OP BIFI-ETH LP Functions
 
 async function getOpBifiEthLpBalance( walletAddress: string ): Promise<bigint> {
-    const web3 = new Web3(`https://opt-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_RPC_KEY}`);
-  if (!opBifiEthLpAbi || !opBifiEthLpAddress) {
+    const web3 = getWeb3(opBifiEthLp.chain);
+  if (!opBifiEthLp?.abi || !opBifiEthLp?.address) {
     throw new Error('Error: opBifiEthLp contract ABI or address is missing');
   }
-  const opBifiEthLp = new web3.eth.Contract(opBifiEthLpAbi as any[], opBifiEthLpAddress);
-  const balanceRaw = await (opBifiEthLp.methods.balanceOf as any)(walletAddress).call() as string;
+  const opBifiEthLpContract = new web3.eth.Contract(opBifiEthLp.abi, opBifiEthLp.address);
+  const balanceRaw = await (opBifiEthLpContract.methods.balanceOf as any)(walletAddress).call() as string;
   return BigInt(balanceRaw);
 }
 
 async function getOpBifiEthLpPrice(): Promise<number> {
-  const headers = { 'Authorization': `Bearer ${process.env.BEEFY_API_KEY}` };
-  const response = await fetch("https://data.beefy.finance/api/v2/prices?oracle=velodrome-v2-weth-moobifi&bucket=1h_1M", { headers });
-  const data = await response.json() as PriceDataPoint[];
-  const pair = data[data.length - 1];
-  if (!pair) {
-    throw new Error("Error: Beefy API failed to return a price");
+  if (!opBifiEthLp?.price_symbol || !opBifiEthLp?.price_source) {
+    throw new Error('Error: opBifiEthLp price symbol or source is missing from contracts config');
   }
-  return pair.v;
+  const price = await getPrice(opBifiEthLp.price_symbol, opBifiEthLp.price_source);
+  return price;
 }
 
 async function getOpBifiEthLpPpfs(): Promise<number> {
-  const headers = { 'Authorization': `Bearer ${process.env.DATABARN_API_KEY}` };
-  const utcDatetime = new Date().toISOString();
-  const getUrl = `https://db-core.beefy.com/api/v1/price/around-a-date?price_type=share_to_underlying&oracle_id=velodrome-v2-weth-moobifi&utc_datetime=${utcDatetime}&look_around=1day&half_limit=1`;
-  const response = await fetch(getUrl, { headers });
-  const data = await response.json() as PpfsResponse;
-  const firstRow = data.priceRows[0];
-  if (!firstRow) {
-    throw new Error("Error: Databarn API failed to return a PPFS value");
+  if (!opBifiEthLp?.price_symbol) {
+    throw new Error('Error: opBifiEthLp price symbol is missing from contracts config');
   }
-  const ppfs = firstRow.price;
+  if (!opBifiEthLp?.price_source) {
+    throw new Error('Error: opBifiEthLp price source is missing from contracts config');
+  }
+  const ppfs = await getPrice(opBifiEthLp.price_symbol, opBifiEthLp.price_source);
   return ppfs;
 }
 

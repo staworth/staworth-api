@@ -28,6 +28,7 @@ app.get('/', (req: Request, res: Response) => {
       'GET /articles': "Staworth's published articles.",
       'GET /links': "Staworth's important links.",
       'GET /portfolio': "Staworth's portfolio holdings.",
+      'POST /portfolio/update': "Trigger portfolio update (requires x-cron-secret header).",
     }
   });
 });
@@ -51,4 +52,5 @@ app.listen(PORT, () => {
   console.log(`  • GET  /articles                     - Staworth's published articles`);
   console.log(`  • GET  /links                        - Staworth's important links`);
   console.log(`  • GET  /portfolio                    - Staworth's portfolio holdings`);
+  console.log(`  • POST /portfolio/update             - Trigger portfolio update (requires x-cron-secret header)`);
 });

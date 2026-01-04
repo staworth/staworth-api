@@ -1,6 +1,15 @@
 export interface PortfolioItem {
-  balance?: number;
+  type: string;
+  defi_protocol?: string | null;
+  balance: number;
   value: number;
 }
 
-export type PortfolioData = Record<string, PortfolioItem>;
+export interface Portfolio {
+  total?: {
+    value: number;
+  };
+  positions: {
+    [key: string]: PortfolioItem;
+  };
+}

@@ -13,3 +13,4 @@ tmp/
 temp/
 .cache/
 .DS_Store
+.vercel

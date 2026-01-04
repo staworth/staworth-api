@@ -39,21 +39,16 @@ Runs the test suite using Vitest, including blockchain integration and portfolio
 | GET | `/accounts` | Summary of Staworth's onchain accounts |
 | GET | `/articles` | Staworth's published articles |
 | GET | `/links` | Staworth's important links |
-| GET | `/portfolio` | Staworth's portfolio holdings (BIFI, GNO, ETH) |
+| GET | `/portfolio` | Staworth's portfolio holdings (BIFI, GNO, NXM, xDAI, Beefy/Aave positions) |
 
 ## Features
 
 ### Portfolio Management
-- **Multi-chain integration**: Tracks assets across Optimism and Gnosis Chain
-- **BIFI tracking**: Monitors BIFI token balances and values including LP positions
-- **GNO tracking**: Monitors GNO token balances and values
-- **Automated aggregation**: Aggregates portfolio data across all configured accounts
-- **Real-time pricing**: Fetches current token prices and calculates USD values
-
-### Blockchain Services
-- **BIFI Service** (`src/services/blockchain/bifi.ts`): Interacts with BIFI contracts on Optimism, calculates LP token values
-- **GNO Service** (`src/services/blockchain/gno.ts`): Interacts with GNO contracts on Gnosis Chain
-- **Portfolio Updater** (`src/services/portfolio/portfolioUpdater.ts`): Orchestrates portfolio updates across all accounts
+- **Multi-chain integration**: Tracks assets across Ethereum, Optimism, Gnosis, Base
+- **Token tracking**: BIFI, GNO, NXM (wallet + optional staking NFT), xDAI (sDAI on Gnosis)
+- **DeFi positions**: Beefy vaults and Aave V3 aTokens aggregated across wallets
+- **Automated aggregation**: Aggregates balances/values across all configured accounts
+- **Real-time pricing**: Fetches token and vault prices and calculates USD values
 
 ### Data Sources
 Portfolio data is aggregated from multiple wallet addresses configured in `data/accounts/accounts.json`. The system automatically queries all accounts and combines their balances and values.
