@@ -7,7 +7,7 @@ import articlesRoutes from './routes/articlesRoutes.js';
 import linksRoutes from './routes/linksRoutes.js';
 import portfolioRoutes from './routes/portfolioRoutes.js';
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 const app = express();
 const PORT = process.env.PORT || 3001;

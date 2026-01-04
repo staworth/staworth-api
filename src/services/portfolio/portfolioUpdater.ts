@@ -8,6 +8,7 @@ import { getTotalxDaiBalance, getTotalxDaiValue } from '../blockchain/xdai.js';
 import { getBeefyPositions } from '../blockchain/beefyPositions.js';
 import { getAaveV3Positions } from '../blockchain/aavePositions.js';
 import { readPortfolioFromStore, writePortfolioToStore } from './portfolioStore.js';
+import { getAaveMetadata, getBeefyMetadata } from './portfolioMetadata.js';
 
 const ACCOUNTS_PATH = path.join(process.cwd(), 'data', 'accounts', 'accounts.json');
 
@@ -125,8 +126,11 @@ async function updateBifiPortfolio(portfolio: Portfolio): Promise<void> {
     const valueTotal = Math.round(values.reduce((sum, v) => sum + v, 0) * 100) / 100;
 
     portfolio.positions.bifi = {
+      name: 'Beefy Finance',
       type: 'governance',
       defi_protocol: null,
+      url: 'https://beefy.com/',
+      img: '/images/portfolio/bifi-token.png',
       balance: balanceTotal,
       value: valueTotal,
     };
@@ -153,8 +157,11 @@ async function updateGnoPortfolio(portfolio: Portfolio): Promise<void> {
     const valueTotal = Math.round(values.reduce((sum, v) => sum + v, 0) * 100) / 100;
 
     portfolio.positions.gno = {
+      name: 'Gnosis',
       type: 'governance',
       defi_protocol: null,
+      url: 'https://gnosis.io/',
+      img: '/images/portfolio/gno-token.png',
       balance: balanceTotal,
       value: valueTotal,
     };
@@ -190,8 +197,11 @@ async function updateNxmPortfolio(portfolio: Portfolio): Promise<void> {
     const valueTotal = Math.round((ethValues.reduce((sum, v) => sum + v, 0) + stakedValueTotal) * 100) / 100;
 
     portfolio.positions.nxm = {
+      name: 'Nexus Mutual',
       type: 'governance',
       defi_protocol: null,
+      url: 'https://nexusmutual.io/',
+      img: '/images/portfolio/nxm-token.png',
       balance: balanceTotal,
       value: valueTotal,
     };
@@ -218,8 +228,11 @@ async function updateXDaiPortfolio(portfolio: Portfolio): Promise<void> {
     const valueTotal = Math.round(values.reduce((sum, v) => sum + v, 0) * 100) / 100;
 
     portfolio.positions.xdai = {
+      name: 'xDAI',
       type: 'stablecoin',
       defi_protocol: null,
+      url: 'https://docs.gnosischain.com/about/tokens/xdai',
+      img: '/images/portfolio/xdai-token.png',
       balance: balanceTotal,
       value: valueTotal,
     };
@@ -265,9 +278,13 @@ async function updateBeefyPositionsPortfolio(portfolio: Portfolio): Promise<void
     
     // Update portfolio with aggregated positions
     for (const [vaultName, position] of Object.entries(aggregatedPositions)) {
+      const metadata = getBeefyMetadata(vaultName);
       portfolio.positions[vaultName] = {
+        name: metadata.name,
         type: 'defi',
         defi_protocol: 'beefy',
+        url: metadata.url,
+        img: metadata.img,
         balance: Math.round(position.balance * 1000) / 1000,
         value: Math.round(position.value * 100) / 100,
       };
@@ -317,9 +334,13 @@ async function updateAaveV3Portfolio(portfolio: Portfolio): Promise<void> {
     
     // Update portfolio with aggregated positions
     for (const [tokenName, position] of Object.entries(aggregatedPositions)) {
+      const metadata = getAaveMetadata(tokenName);
       portfolio.positions[tokenName] = {
+        name: metadata.name,
         type: 'defi',
         defi_protocol: 'aave',
+        url: metadata.url,
+        img: metadata.img,
         balance: Math.round(position.balance * 1000) / 1000,
         value: Math.round(position.value * 100) / 100,
       };
