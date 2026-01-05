@@ -29,10 +29,10 @@
     "img": "/images/links/linkedin.webp",
     "label": "LinkedIn"
   },
-  "Mirror": {
-    "link": "https://mirror.xyz/staworth.eth",
-    "img": "/images/links/mirror.webp",
-    "label": "Mirror"
+  "Paragraph": {
+    "link": "https://paragraph.com/@staworth",
+    "img": "/images/links/paragraph.webp",
+    "label": "Paragraph"
   },
   "Farcaster": {
     "link": "https://warpcast.com/staworth",
