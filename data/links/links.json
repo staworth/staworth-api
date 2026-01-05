@@ -1,57 +1,57 @@
 {
   "Staworth.com": {
     "link": "https://staworth.com",
-    "img": "/images/links/www.png",
+    "img": "/images/links/www.webp",
     "label": "Staworth.com"
   },
   "Staworth Limited": {
     "link": "https://find-and-update.company-information.service.gov.uk/company/15540474",
-    "img": "/images/links/hm.png",
+    "img": "/images/links/hm.webp",
     "label": "Staworth Limited"
   },
   "Staworth.eth": {
     "link": "https://app.ens.domains/staworth.eth",
-    "img": "/images/links/ethereum.png",
+    "img": "/images/links/ethereum.webp",
     "label": "Staworth.eth"
   },
   "GitHub": {
     "link": "https://github.com/Staworth",
-    "img": "/images/links/github.png",
+    "img": "/images/links/github.webp",
     "label": "GitHub"
   },
   "X": {
     "link": "https://twitter.com/staworth",
-    "img": "/images/links/x.png",
+    "img": "/images/links/x.webp",
     "label": "X"
   },
   "LinkedIn": {
     "link": "https://www.linkedin.com/company/staworth/",
-    "img": "/images/links/linkedin.png",
+    "img": "/images/links/linkedin.webp",
     "label": "LinkedIn"
   },
   "Mirror": {
     "link": "https://mirror.xyz/staworth.eth",
-    "img": "/images/links/mirror.png",
+    "img": "/images/links/mirror.webp",
     "label": "Mirror"
   },
   "Farcaster": {
     "link": "https://warpcast.com/staworth",
-    "img": "/images/links/farcaster.png",
+    "img": "/images/links/farcaster.webp",
     "label": "Farcaster"
   },
   "YouTube": {
     "link": "https://www.youtube.com/@Staworth",
-    "img": "/images/links/youtube.png",
+    "img": "/images/links/youtube.webp",
     "label": "YouTube"
   },
   "Snapshot": {
     "link": "https://snapshot.org/#/profile/0x76c32eF9587b07c77545Ad1a86E02fC1f045a3b9",
-    "img": "/images/links/snapshot.png",
+    "img": "/images/links/snapshot.webp",
     "label": "Snapshot"
   },
   "DeBank": {
     "link": "https://debank.com/profile/0x72E7197DA72FbC51828fa82CBa8683Bf0B6acf5e",
-    "img": "/images/links/debank.png",
+    "img": "/images/links/debank.webp",
     "label": "DeBank"
   }
 }

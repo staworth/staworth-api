@@ -126,11 +126,11 @@ async function updateBifiPortfolio(portfolio: Portfolio): Promise<void> {
     const valueTotal = Math.round(values.reduce((sum, v) => sum + v, 0) * 100) / 100;
 
     portfolio.positions.bifi = {
-      name: 'Beefy Finance',
+      name: 'Beefy',
       type: 'governance',
       defi_protocol: null,
       url: 'https://beefy.com/',
-      img: '/images/portfolio/bifi-token.png',
+      img: '/images/portfolio/bifi-token.webp',
       balance: balanceTotal,
       value: valueTotal,
     };
@@ -161,7 +161,7 @@ async function updateGnoPortfolio(portfolio: Portfolio): Promise<void> {
       type: 'governance',
       defi_protocol: null,
       url: 'https://gnosis.io/',
-      img: '/images/portfolio/gno-token.png',
+      img: '/images/portfolio/gno-token.webp',
       balance: balanceTotal,
       value: valueTotal,
     };
@@ -201,7 +201,7 @@ async function updateNxmPortfolio(portfolio: Portfolio): Promise<void> {
       type: 'governance',
       defi_protocol: null,
       url: 'https://nexusmutual.io/',
-      img: '/images/portfolio/nxm-token.png',
+      img: '/images/portfolio/nxm-token.webp',
       balance: balanceTotal,
       value: valueTotal,
     };
@@ -232,7 +232,7 @@ async function updateXDaiPortfolio(portfolio: Portfolio): Promise<void> {
       type: 'stablecoin',
       defi_protocol: null,
       url: 'https://docs.gnosischain.com/about/tokens/xdai',
-      img: '/images/portfolio/xdai-token.png',
+      img: '/images/portfolio/xdai-token.webp',
       balance: balanceTotal,
       value: valueTotal,
     };
