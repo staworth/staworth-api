@@ -1,0 +1,140 @@
+{
+    "statement": "balance_sheet",
+    "statement_date": "2025-09-30",
+    "version": "1.0",
+    "entity": "Beefy DAO",
+    "last_updated": "2026-01-06",
+    "currency": "USD",
+    "sections": [
+        {
+            "id": "assets",
+            "label": "Assets",
+            "type": "section",
+            "value": 6528560,
+            "items": [
+                {
+                    "id": "non_current_assets",
+                    "label": "Non-current Assets",
+                    "type": "subsection",
+                    "value": 1367391,
+                    "items": [
+                        {
+                            "id": "ethereum_validator",
+                            "label": "Ethereum Validator",
+                            "type": "line_item",
+                            "value": 1239915
+                        },
+                        {
+                            "id": "fantom_validator",
+                            "label": "Fantom Validator",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "fuse_validator",
+                            "label": "Fuse Validator",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "sonic_validator",
+                            "label": "Sonic Validator",
+                            "type": "line_item",
+                            "value": 127476
+                        }
+                    ]
+                },
+                {
+                    "id": "current_assets",
+                    "label": "Current Assets",
+                    "type": "subsection",
+                    "value": 3203635,
+                    "items": [
+                        {
+                            "id": "market_maker_assets",
+                            "label": "Market Maker Assets",
+                            "type": "line_item",
+                            "value": 219853
+                        },
+                        {
+                            "id": "protocol_owned_liquidity",
+                            "label": "Protocol-owned Liquidity",
+                            "type": "line_item",
+                            "value": 797281
+                        },
+                        {
+                            "id": "other_investments",
+                            "label": "Other Investments",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "other_tokens",
+                            "label": "Other Tokens",
+                            "type": "line_item",
+                            "value": 181659
+                        },
+                        {
+                            "id": "bifi_tokens",
+                            "label": "BIFI Tokens",
+                            "type": "line_item",
+                            "value": 222882
+                        },
+                        {
+                            "id": "wbtc_tokens",
+                            "label": "WBTC Tokens",
+                            "type": "line_item",
+                            "value": 1759955
+                        },
+                        {
+                            "id": "eth_tokens",
+                            "label": "ETH Tokens",
+                            "type": "line_item",
+                            "value": 3432 
+                        },
+                        {
+                            "id": "native_tokens",
+                            "label": "Native Tokens",
+                            "type": "line_item",
+                            "value": 18563
+                        }
+                    ]
+                },
+                {
+                    "id": "cash_equivalents",
+                    "label": "Cash & Equivalents",
+                    "type": "subsection",
+                    "value": 1957533,
+                    "items": [
+                        {
+                            "id": "stablecoins",
+                            "label": "Stablecoins",
+                            "type": "line_item",
+                            "value": 215872
+                        },
+                        {
+                            "id": "stablecoin_investments",
+                            "label": "Stablecoin Investments",
+                            "type": "line_item",
+                            "value": 1741662
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "liabilities",
+            "label": "Liabilities",
+            "type": "section",
+            "value": 0,
+            "items": []
+        },
+        {
+            "id": "equity",
+            "label": "Equity",
+            "type": "section",
+            "value": 6528560,
+            "items": []
+        }
+    ]
+}

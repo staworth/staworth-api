@@ -41,6 +41,8 @@ Runs the test suite using Vitest, including blockchain integration and portfolio
 | GET | `/links` | Staworth's important links |
 | GET | `/portfolio` | Staworth's portfolio positions from Redis |
 | POST | `/portfolio/update` | Trigger portfolio update (requires `x-cron-secret` header) |
+| GET | `/beefy/balance-sheet` | Beefy DAO's balance sheet |
+| GET | `/beefy/balance-sheet/historic` | Historic balance sheets for Beefy DAO |
 
 ## Features
 

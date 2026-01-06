@@ -1,0 +1,1617 @@
+{
+    "statement": "historic_balance_sheet",
+    "version": "1.0",
+    "entity": "Beefy DAO",
+    "last_updated": "2026-01-06",
+    "currency": "USD",
+    "historic_statements": [
+        {
+            "2025-09-30": [
+                {
+                    "id": "assets",
+                    "label": "Assets",
+                    "type": "section",
+                    "value": 6528560,
+                    "items": [
+                        {
+                            "id": "non_current_assets",
+                            "label": "Non-current Assets",
+                            "type": "subsection",
+                            "value": 1367391,
+                            "items": [
+                                {
+                                    "id": "ethereum_validator",
+                                    "label": "Ethereum Validator",
+                                    "type": "line_item",
+                                    "value": 1239915
+                                },
+                                {
+                                    "id": "fantom_validator",
+                                    "label": "Fantom Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "fuse_validator",
+                                    "label": "Fuse Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "sonic_validator",
+                                    "label": "Sonic Validator",
+                                    "type": "line_item",
+                                    "value": 127476
+                                }
+                            ]
+                        },
+                        {
+                            "id": "current_assets",
+                            "label": "Current Assets",
+                            "type": "subsection",
+                            "value": 3203635,
+                            "items": [
+                                {
+                                    "id": "market_maker_assets",
+                                    "label": "Market Maker Assets",
+                                    "type": "line_item",
+                                    "value": 219853
+                                },
+                                {
+                                    "id": "protocol_owned_liquidity",
+                                    "label": "Protocol-owned Liquidity",
+                                    "type": "line_item",
+                                    "value": 797281
+                                },
+                                {
+                                    "id": "other_investments",
+                                    "label": "Other Investments",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "other_tokens",
+                                    "label": "Other Tokens",
+                                    "type": "line_item",
+                                    "value": 181659
+                                },
+                                {
+                                    "id": "bifi_tokens",
+                                    "label": "BIFI Tokens",
+                                    "type": "line_item",
+                                    "value": 222882
+                                },
+                                {
+                                    "id": "wbtc_tokens",
+                                    "label": "WBTC Tokens",
+                                    "type": "line_item",
+                                    "value": 1759955
+                                },
+                                {
+                                    "id": "eth_tokens",
+                                    "label": "ETH Tokens",
+                                    "type": "line_item",
+                                    "value": 3432 
+                                },
+                                {
+                                    "id": "native_tokens",
+                                    "label": "Native Tokens",
+                                    "type": "line_item",
+                                    "value": 18563
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cash_equivalents",
+                            "label": "Cash & Equivalents",
+                            "type": "subsection",
+                            "value": 1957533,
+                            "items": [
+                                {
+                                    "id": "stablecoins",
+                                    "label": "Stablecoins",
+                                    "type": "line_item",
+                                    "value": 215872
+                                },
+                                {
+                                    "id": "stablecoin_investments",
+                                    "label": "Stablecoin Investments",
+                                    "type": "line_item",
+                                    "value": 1741662
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "liabilities",
+                    "label": "Liabilities",
+                    "type": "section",
+                    "value": 0,
+                    "items": []
+                },
+                {
+                    "id": "equity",
+                    "label": "Equity",
+                    "type": "section",
+                    "value": 6528560,
+                    "items": []
+                }
+            ]
+        },
+        {
+            "2025-06-30": [
+                {
+                    "id": "assets",
+                    "label": "Assets",
+                    "type": "section",
+                    "value": 5785211,
+                    "items": [
+                        {
+                            "id": "non_current_assets",
+                            "label": "Non-current Assets",
+                            "type": "subsection",
+                            "value": 1026215,
+                            "items": [
+                                {
+                                    "id": "ethereum_validator",
+                                    "label": "Ethereum Validator",
+                                    "type": "line_item",
+                                    "value": 867467
+                                },
+                                {
+                                    "id": "fantom_validator",
+                                    "label": "Fantom Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "fuse_validator",
+                                    "label": "Fuse Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "sonic_validator",
+                                    "label": "Sonic Validator",
+                                    "type": "line_item",
+                                    "value": 158748
+                                }
+                            ]
+                        },
+                        {
+                            "id": "current_assets",
+                            "label": "Current Assets",
+                            "type": "subsection",
+                            "value": 2775193,
+                            "items": [
+                                {
+                                    "id": "market_maker_assets",
+                                    "label": "Market Maker Assets",
+                                    "type": "line_item",
+                                    "value": 198355
+                                },
+                                {
+                                    "id": "protocol_owned_liquidity",
+                                    "label": "Protocol-owned Liquidity",
+                                    "type": "line_item",
+                                    "value": 456308
+                                },
+                                {
+                                    "id": "other_investments",
+                                    "label": "Other Investments",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "other_tokens",
+                                    "label": "Other Tokens",
+                                    "type": "line_item",
+                                    "value": 244077
+                                },
+                                {
+                                    "id": "bifi_tokens",
+                                    "label": "BIFI Tokens",
+                                    "type": "line_item",
+                                    "value": 196464
+                                },
+                                {
+                                    "id": "wbtc_tokens",
+                                    "label": "WBTC Tokens",
+                                    "type": "line_item",
+                                    "value": 1650553
+                                },
+                                {
+                                    "id": "eth_tokens",
+                                    "label": "ETH Tokens",
+                                    "type": "line_item",
+                                    "value": 13622
+                                },
+                                {
+                                    "id": "native_tokens",
+                                    "label": "Native Tokens",
+                                    "type": "line_item",
+                                    "value": 15814
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cash_equivalents",
+                            "label": "Cash & Equivalents",
+                            "type": "subsection",
+                            "value": 1983802,
+                            "items": [
+                                {
+                                    "id": "stablecoins",
+                                    "label": "Stablecoins",
+                                    "type": "line_item",
+                                    "value": 139502
+                                },
+                                {
+                                    "id": "stablecoin_investments",
+                                    "label": "Stablecoin Investments",
+                                    "type": "line_item",
+                                    "value": 1844300
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "liabilities",
+                    "label": "Liabilities",
+                    "type": "section",
+                    "value": 0,
+                    "items": []
+                },
+                {
+                    "id": "equity",
+                    "label": "Equity",
+                    "type": "section",
+                    "value": 5785211,
+                    "items": []
+                }
+            ]
+        },
+        {
+            "2025-03-31": [
+                {
+                    "id": "assets",
+                    "label": "Assets",
+                    "type": "section",
+                    "value": 5435370,
+                    "items": [
+                        {
+                            "id": "non_current_assets",
+                            "label": "Non-current Assets",
+                            "type": "subsection",
+                            "value": 834415,
+                            "items": [
+                                {
+                                    "id": "ethereum_validator",
+                                    "label": "Ethereum Validator",
+                                    "type": "line_item",
+                                    "value": 584101
+                                },
+                                {
+                                    "id": "fantom_validator",
+                                    "label": "Fantom Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "fuse_validator",
+                                    "label": "Fuse Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "sonic_validator",
+                                    "label": "Sonic Validator",
+                                    "type": "line_item",
+                                    "value": 250314
+                                }
+                            ]
+                        },
+                        {
+                            "id": "current_assets",
+                            "label": "Current Assets",
+                            "type": "subsection",
+                            "value": 2399449,
+                            "items": [
+                                {
+                                    "id": "market_maker_assets",
+                                    "label": "Market Maker Assets",
+                                    "type": "line_item",
+                                    "value": 209706
+                                },
+                                {
+                                    "id": "protocol_owned_liquidity",
+                                    "label": "Protocol-owned Liquidity",
+                                    "type": "line_item",
+                                    "value": 406084
+                                },
+                                {
+                                    "id": "other_investments",
+                                    "label": "Other Investments",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "other_tokens",
+                                    "label": "Other Tokens",
+                                    "type": "line_item",
+                                    "value": 197642
+                                },
+                                {
+                                    "id": "bifi_tokens",
+                                    "label": "BIFI Tokens",
+                                    "type": "line_item",
+                                    "value": 218849
+                                },
+                                {
+                                    "id": "wbtc_tokens",
+                                    "label": "WBTC Tokens",
+                                    "type": "line_item",
+                                    "value": 1271555
+                                },
+                                {
+                                    "id": "eth_tokens",
+                                    "label": "ETH Tokens",
+                                    "type": "line_item",
+                                    "value": 49740
+                                },
+                                {
+                                    "id": "native_tokens",
+                                    "label": "Native Tokens",
+                                    "type": "line_item",
+                                    "value": 45873
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cash_equivalents",
+                            "label": "Cash & Equivalents",
+                            "type": "subsection",
+                            "value": 2201506,
+                            "items": [
+                                {
+                                    "id": "stablecoins",
+                                    "label": "Stablecoins",
+                                    "type": "line_item",
+                                    "value": 1166694
+                                },
+                                {
+                                    "id": "stablecoin_investments",
+                                    "label": "Stablecoin Investments",
+                                    "type": "line_item",
+                                    "value": 1034812
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "liabilities",
+                    "label": "Liabilities",
+                    "type": "section",
+                    "value": 0,
+                    "items": []
+                },
+                {
+                    "id": "equity",
+                    "label": "Equity",
+                    "type": "section",
+                    "value": 5435370,
+                    "items": []
+                }
+            ]
+        },
+        {
+            "2024-12-31": [
+                {
+                    "id": "assets",
+                    "label": "Assets",
+                    "type": "section",
+                    "value": 7326832,
+                    "items": [
+                        {
+                            "id": "non_current_assets",
+                            "label": "Non-current Assets",
+                            "type": "subsection",
+                            "value": 1409145,
+                            "items": [
+                                {
+                                    "id": "ethereum_validator",
+                                    "label": "Ethereum Validator",
+                                    "type": "line_item",
+                                    "value": 1068058
+                                },
+                                {
+                                    "id": "fantom_validator",
+                                    "label": "Fantom Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "fuse_validator",
+                                    "label": "Fuse Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "sonic_validator",
+                                    "label": "Sonic Validator",
+                                    "type": "line_item",
+                                    "value": 341087
+                                }
+                            ]
+                        },
+                        {
+                            "id": "current_assets",
+                            "label": "Current Assets",
+                            "type": "subsection",
+                            "value": 3585308,
+                            "items": [
+                                {
+                                    "id": "market_maker_assets",
+                                    "label": "Market Maker Assets",
+                                    "type": "line_item",
+                                    "value": 403623
+                                },
+                                {
+                                    "id": "protocol_owned_liquidity",
+                                    "label": "Protocol-owned Liquidity",
+                                    "type": "line_item",
+                                    "value": 672806
+                                },
+                                {
+                                    "id": "other_investments",
+                                    "label": "Other Investments",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "other_tokens",
+                                    "label": "Other Tokens",
+                                    "type": "line_item",
+                                    "value": 483348
+                                },
+                                {
+                                    "id": "bifi_tokens",
+                                    "label": "BIFI Tokens",
+                                    "type": "line_item",
+                                    "value": 471449
+                                },
+                                {
+                                    "id": "wbtc_tokens",
+                                    "label": "WBTC Tokens",
+                                    "type": "line_item",
+                                    "value": 1439136
+                                },
+                                {
+                                    "id": "eth_tokens",
+                                    "label": "ETH Tokens",
+                                    "type": "line_item",
+                                    "value": 83946
+                                },
+                                {
+                                    "id": "native_tokens",
+                                    "label": "Native Tokens",
+                                    "type": "line_item",
+                                    "value": 31000
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cash_equivalents",
+                            "label": "Cash & Equivalents",
+                            "type": "subsection",
+                            "value": 2332379,
+                            "items": [
+                                {
+                                    "id": "stablecoins",
+                                    "label": "Stablecoins",
+                                    "type": "line_item",
+                                    "value": 1206000
+                                },
+                                {
+                                    "id": "stablecoin_investments",
+                                    "label": "Stablecoin Investments",
+                                    "type": "line_item",
+                                    "value": 1126379
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "liabilities",
+                    "label": "Liabilities",
+                    "type": "section",
+                    "value": 0,
+                    "items": []
+                },
+                {
+                    "id": "equity",
+                    "label": "Equity",
+                    "type": "section",
+                    "value": 7326832,
+                    "items": []
+                }
+            ]
+        },
+        {
+            "2024-09-30": [
+                {
+                    "id": "assets",
+                    "label": "Assets",
+                    "type": "section",
+                    "value": 6564152,
+                    "items": [
+                        {
+                            "id": "non_current_assets",
+                            "label": "Non-current Assets",
+                            "type": "subsection",
+                            "value": 851554,
+                            "items": [
+                                {
+                                    "id": "ethereum_validator",
+                                    "label": "Ethereum Validator",
+                                    "type": "line_item",
+                                    "value": 851554
+                                },
+                                {
+                                    "id": "fantom_validator",
+                                    "label": "Fantom Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "fuse_validator",
+                                    "label": "Fuse Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "sonic_validator",
+                                    "label": "Sonic Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                }
+                            ]
+                        },
+                        {
+                            "id": "current_assets",
+                            "label": "Current Assets",
+                            "type": "subsection",
+                            "value": 3106784,
+                            "items": [
+                                {
+                                    "id": "market_maker_assets",
+                                    "label": "Market Maker Assets",
+                                    "type": "line_item",
+                                    "value": 210294
+                                },
+                                {
+                                    "id": "protocol_owned_liquidity",
+                                    "label": "Protocol-owned Liquidity",
+                                    "type": "line_item",
+                                    "value": 524916
+                                },
+                                {
+                                    "id": "other_investments",
+                                    "label": "Other Investments",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "other_tokens",
+                                    "label": "Other Tokens",
+                                    "type": "line_item",
+                                    "value": 601118
+                                },
+                                {
+                                    "id": "bifi_tokens",
+                                    "label": "BIFI Tokens",
+                                    "type": "line_item",
+                                    "value": 326304
+                                },
+                                {
+                                    "id": "wbtc_tokens",
+                                    "label": "WBTC Tokens",
+                                    "type": "line_item",
+                                    "value": 1010763
+                                },
+                                {
+                                    "id": "eth_tokens",
+                                    "label": "ETH Tokens",
+                                    "type": "line_item",
+                                    "value": 60057
+                                },
+                                {
+                                    "id": "native_tokens",
+                                    "label": "Native Tokens",
+                                    "type": "line_item",
+                                    "value": 373332
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cash_equivalents",
+                            "label": "Cash & Equivalents",
+                            "type": "subsection",
+                            "value": 2605814,
+                            "items": [
+                                {
+                                    "id": "stablecoins",
+                                    "label": "Stablecoins",
+                                    "type": "line_item",
+                                    "value": 1037252
+                                },
+                                {
+                                    "id": "stablecoin_investments",
+                                    "label": "Stablecoin Investments",
+                                    "type": "line_item",
+                                    "value": 1568562
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "liabilities",
+                    "label": "Liabilities",
+                    "type": "section",
+                    "value": 0,
+                    "items": []
+                },
+                {
+                    "id": "equity",
+                    "label": "Equity",
+                    "type": "section",
+                    "value": 6564152,
+                    "items": []
+                }
+            ]
+        },
+        {
+            "2024-06-30": [
+                {
+                    "id": "assets",
+                    "label": "Assets",
+                    "type": "section",
+                    "value": 6692687,
+                    "items": [
+                        {
+                            "id": "non_current_assets",
+                            "label": "Non-current Assets",
+                            "type": "subsection",
+                            "value": 889438,
+                            "items": [
+                                {
+                                    "id": "ethereum_validator",
+                                    "label": "Ethereum Validator",
+                                    "type": "line_item",
+                                    "value": 879802
+                                },
+                                {
+                                    "id": "fantom_validator",
+                                    "label": "Fantom Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "fuse_validator",
+                                    "label": "Fuse Validator",
+                                    "type": "line_item",
+                                    "value": 9636
+                                },
+                                {
+                                    "id": "sonic_validator",
+                                    "label": "Sonic Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                }
+                            ]
+                        },
+                        {
+                            "id": "current_assets",
+                            "label": "Current Assets",
+                            "type": "subsection",
+                            "value": 2875737,
+                            "items": [
+                                {
+                                    "id": "market_maker_assets",
+                                    "label": "Market Maker Assets",
+                                    "type": "line_item",
+                                    "value": 230798
+                                },
+                                {
+                                    "id": "protocol_owned_liquidity",
+                                    "label": "Protocol-owned Liquidity",
+                                    "type": "line_item",
+                                    "value": 606132
+                                },
+                                {
+                                    "id": "other_investments",
+                                    "label": "Other Investments",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "other_tokens",
+                                    "label": "Other Tokens",
+                                    "type": "line_item",
+                                    "value": 492994
+                                },
+                                {
+                                    "id": "bifi_tokens",
+                                    "label": "BIFI Tokens",
+                                    "type": "line_item",
+                                    "value": 351533
+                                },
+                                {
+                                    "id": "wbtc_tokens",
+                                    "label": "WBTC Tokens",
+                                    "type": "line_item",
+                                    "value": 859679
+                                },
+                                {
+                                    "id": "eth_tokens",
+                                    "label": "ETH Tokens",
+                                    "type": "line_item",
+                                    "value": 8518
+                                },
+                                {
+                                    "id": "native_tokens",
+                                    "label": "Native Tokens",
+                                    "type": "line_item",
+                                    "value": 326083
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cash_equivalents",
+                            "label": "Cash & Equivalents",
+                            "type": "subsection",
+                            "value": 2927511,
+                            "items": [
+                                {
+                                    "id": "stablecoins",
+                                    "label": "Stablecoins",
+                                    "type": "line_item",
+                                    "value": 1079766
+                                },
+                                {
+                                    "id": "stablecoin_investments",
+                                    "label": "Stablecoin Investments",
+                                    "type": "line_item",
+                                    "value": 1847745
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "liabilities",
+                    "label": "Liabilities",
+                    "type": "section",
+                    "value": 0,
+                    "items": []
+                },
+                {
+                    "id": "equity",
+                    "label": "Equity",
+                    "type": "section",
+                    "value": 6692687,
+                    "items": []
+                }
+            ]
+        },
+        {
+            "2024-03-31": [
+                {
+                    "id": "assets",
+                    "label": "Assets",
+                    "type": "section",
+                    "value": 7567241,
+                    "items": [
+                        {
+                            "id": "non_current_assets",
+                            "label": "Non-current Assets",
+                            "type": "subsection",
+                            "value": 1472266,
+                            "items": [
+                                {
+                                    "id": "ethereum_validator",
+                                    "label": "Ethereum Validator",
+                                    "type": "line_item",
+                                    "value": 933270
+                                },
+                                {
+                                    "id": "fantom_validator",
+                                    "label": "Fantom Validator",
+                                    "type": "line_item",
+                                    "value": 521571
+                                },
+                                {
+                                    "id": "fuse_validator",
+                                    "label": "Fuse Validator",
+                                    "type": "line_item",
+                                    "value": 17425
+                                },
+                                {
+                                    "id": "sonic_validator",
+                                    "label": "Sonic Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                }
+                            ]
+                        },
+                        {
+                            "id": "current_assets",
+                            "label": "Current Assets",
+                            "type": "subsection",
+                            "value": 3693379,
+                            "items": [
+                                {
+                                    "id": "market_maker_assets",
+                                    "label": "Market Maker Assets",
+                                    "type": "line_item",
+                                    "value": 323197
+                                },
+                                {
+                                    "id": "protocol_owned_liquidity",
+                                    "label": "Protocol-owned Liquidity",
+                                    "type": "line_item",
+                                    "value": 548953
+                                },
+                                {
+                                    "id": "other_investments",
+                                    "label": "Other Investments",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "other_tokens",
+                                    "label": "Other Tokens",
+                                    "type": "line_item",
+                                    "value": 1140735
+                                },
+                                {
+                                    "id": "bifi_tokens",
+                                    "label": "BIFI Tokens",
+                                    "type": "line_item",
+                                    "value": 665136
+                                },
+                                {
+                                    "id": "wbtc_tokens",
+                                    "label": "WBTC Tokens",
+                                    "type": "line_item",
+                                    "value": 980945
+                                },
+                                {
+                                    "id": "eth_tokens",
+                                    "label": "ETH Tokens",
+                                    "type": "line_item",
+                                    "value": 15415
+                                },
+                                {
+                                    "id": "native_tokens",
+                                    "label": "Native Tokens",
+                                    "type": "line_item",
+                                    "value": 18998
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cash_equivalents",
+                            "label": "Cash & Equivalents",
+                            "type": "subsection",
+                            "value": 2401597,
+                            "items": [
+                                {
+                                    "id": "stablecoins",
+                                    "label": "Stablecoins",
+                                    "type": "line_item",
+                                    "value": 828060
+                                },
+                                {
+                                    "id": "stablecoin_investments",
+                                    "label": "Stablecoin Investments",
+                                    "type": "line_item",
+                                    "value": 1573537
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "liabilities",
+                    "label": "Liabilities",
+                    "type": "section",
+                    "value": 0,
+                    "items": []
+                },
+                {
+                    "id": "equity",
+                    "label": "Equity",
+                    "type": "section",
+                    "value": 7567241,
+                    "items": []
+                }
+            ]
+        },
+        {
+            "2023-12-31": [
+                {
+                    "id": "assets",
+                    "label": "Assets",
+                    "type": "section",
+                    "value": 6247676,
+                    "items": [
+                        {
+                            "id": "non_current_assets",
+                            "label": "Non-current Assets",
+                            "type": "subsection",
+                            "value": 772304,
+                            "items": [
+                                {
+                                    "id": "ethereum_validator",
+                                    "label": "Ethereum Validator",
+                                    "type": "line_item",
+                                    "value": 510793
+                                },
+                                {
+                                    "id": "fantom_validator",
+                                    "label": "Fantom Validator",
+                                    "type": "line_item",
+                                    "value": 248297
+                                },
+                                {
+                                    "id": "fuse_validator",
+                                    "label": "Fuse Validator",
+                                    "type": "line_item",
+                                    "value": 13214
+                                },
+                                {
+                                    "id": "sonic_validator",
+                                    "label": "Sonic Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                }
+                            ]
+                        },
+                        {
+                            "id": "current_assets",
+                            "label": "Current Assets",
+                            "type": "subsection",
+                            "value": 3281341,
+                            "items": [
+                                {
+                                    "id": "market_maker_assets",
+                                    "label": "Market Maker Assets",
+                                    "type": "line_item",
+                                    "value": 265716
+                                },
+                                {
+                                    "id": "protocol_owned_liquidity",
+                                    "label": "Protocol-owned Liquidity",
+                                    "type": "line_item",
+                                    "value": 352067
+                                },
+                                {
+                                    "id": "other_investments",
+                                    "label": "Other Investments",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "other_tokens",
+                                    "label": "Other Tokens",
+                                    "type": "line_item",
+                                    "value": 1379276
+                                },
+                                {
+                                    "id": "bifi_tokens",
+                                    "label": "BIFI Tokens",
+                                    "type": "line_item",
+                                    "value": 585625
+                                },
+                                {
+                                    "id": "wbtc_tokens",
+                                    "label": "WBTC Tokens",
+                                    "type": "line_item",
+                                    "value": 578514
+                                },
+                                {
+                                    "id": "eth_tokens",
+                                    "label": "ETH Tokens",
+                                    "type": "line_item",
+                                    "value": 88266
+                                },
+                                {
+                                    "id": "native_tokens",
+                                    "label": "Native Tokens",
+                                    "type": "line_item",
+                                    "value": 31876
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cash_equivalents",
+                            "label": "Cash & Equivalents",
+                            "type": "subsection",
+                            "value": 2194030,
+                            "items": [
+                                {
+                                    "id": "stablecoins",
+                                    "label": "Stablecoins",
+                                    "type": "line_item",
+                                    "value": 833110
+                                },
+                                {
+                                    "id": "stablecoin_investments",
+                                    "label": "Stablecoin Investments",
+                                    "type": "line_item",
+                                    "value": 1360921
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "liabilities",
+                    "label": "Liabilities",
+                    "type": "section",
+                    "value": 0,
+                    "items": []
+                },
+                {
+                    "id": "equity",
+                    "label": "Equity",
+                    "type": "section",
+                    "value": 6247676,
+                    "items": []
+                }
+            ]
+        },
+        {
+            "2023-09-30": [
+                {
+                    "id": "assets",
+                    "label": "Assets",
+                    "type": "section",
+                    "value": 5026548,
+                    "items": [
+                        {
+                            "id": "non_current_assets",
+                            "label": "Non-current Assets",
+                            "type": "subsection",
+                            "value": 172360,
+                            "items": [
+                                {
+                                    "id": "ethereum_validator",
+                                    "label": "Ethereum Validator",
+                                    "type": "line_item",
+                                    "value": 55684
+                                },
+                                {
+                                    "id": "fantom_validator",
+                                    "label": "Fantom Validator",
+                                    "type": "line_item",
+                                    "value": 109864
+                                },
+                                {
+                                    "id": "fuse_validator",
+                                    "label": "Fuse Validator",
+                                    "type": "line_item",
+                                    "value": 6812
+                                },
+                                {
+                                    "id": "sonic_validator",
+                                    "label": "Sonic Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                }
+                            ]
+                        },
+                        {
+                            "id": "current_assets",
+                            "label": "Current Assets",
+                            "type": "subsection",
+                            "value": 1975846,
+                            "items": [
+                                {
+                                    "id": "market_maker_assets",
+                                    "label": "Market Maker Assets",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "protocol_owned_liquidity",
+                                    "label": "Protocol-owned Liquidity",
+                                    "type": "line_item",
+                                    "value": 3294
+                                },
+                                {
+                                    "id": "other_investments",
+                                    "label": "Other Investments",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "other_tokens",
+                                    "label": "Other Tokens",
+                                    "type": "line_item",
+                                    "value": 542042
+                                },
+                                {
+                                    "id": "bifi_tokens",
+                                    "label": "BIFI Tokens",
+                                    "type": "line_item",
+                                    "value": 664956
+                                },
+                                {
+                                    "id": "wbtc_tokens",
+                                    "label": "WBTC Tokens",
+                                    "type": "line_item",
+                                    "value": 369382
+                                },
+                                {
+                                    "id": "eth_tokens",
+                                    "label": "ETH Tokens",
+                                    "type": "line_item",
+                                    "value": 251683
+                                },
+                                {
+                                    "id": "native_tokens",
+                                    "label": "Native Tokens",
+                                    "type": "line_item",
+                                    "value": 144490
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cash_equivalents",
+                            "label": "Cash & Equivalents",
+                            "type": "subsection",
+                            "value": 2878342,
+                            "items": [
+                                {
+                                    "id": "stablecoins",
+                                    "label": "Stablecoins",
+                                    "type": "line_item",
+                                    "value": 1530220
+                                },
+                                {
+                                    "id": "stablecoin_investments",
+                                    "label": "Stablecoin Investments",
+                                    "type": "line_item",
+                                    "value": 1348122
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "liabilities",
+                    "label": "Liabilities",
+                    "type": "section",
+                    "value": 0,
+                    "items": []
+                },
+                {
+                    "id": "equity",
+                    "label": "Equity",
+                    "type": "section",
+                    "value": 5026548,
+                    "items": []
+                }
+            ]
+        },
+        {
+            "2023-06-30": [
+                {
+                    "id": "assets",
+                    "label": "Assets",
+                    "type": "section",
+                    "value": 5075198,
+                    "items": [
+                        {
+                            "id": "non_current_assets",
+                            "label": "Non-current Assets",
+                            "type": "subsection",
+                            "value": 228416,
+                            "items": [
+                                {
+                                    "id": "ethereum_validator",
+                                    "label": "Ethereum Validator",
+                                    "type": "line_item",
+                                    "value": 61905
+                                },
+                                {
+                                    "id": "fantom_validator",
+                                    "label": "Fantom Validator",
+                                    "type": "line_item",
+                                    "value": 158788
+                                },
+                                {
+                                    "id": "fuse_validator",
+                                    "label": "Fuse Validator",
+                                    "type": "line_item",
+                                    "value": 7723
+                                },
+                                {
+                                    "id": "sonic_validator",
+                                    "label": "Sonic Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                }
+                            ]
+                        },
+                        {
+                            "id": "current_assets",
+                            "label": "Current Assets",
+                            "type": "subsection",
+                            "value": 2185935,
+                            "items": [
+                                {
+                                    "id": "market_maker_assets",
+                                    "label": "Market Maker Assets",
+                                    "type": "line_item",
+                                    "value": 388891
+                                },
+                                {
+                                    "id": "protocol_owned_liquidity",
+                                    "label": "Protocol-owned Liquidity",
+                                    "type": "line_item",
+                                    "value": 484497
+                                },
+                                {
+                                    "id": "other_investments",
+                                    "label": "Other Investments",
+                                    "type": "line_item",
+                                    "value": 32977
+                                },
+                                {
+                                    "id": "other_tokens",
+                                    "label": "Other Tokens",
+                                    "type": "line_item",
+                                    "value": 487845
+                                },
+                                {
+                                    "id": "bifi_tokens",
+                                    "label": "BIFI Tokens",
+                                    "type": "line_item",
+                                    "value": 201361
+                                },
+                                {
+                                    "id": "wbtc_tokens",
+                                    "label": "WBTC Tokens",
+                                    "type": "line_item",
+                                    "value": 329584
+                                },
+                                {
+                                    "id": "eth_tokens",
+                                    "label": "ETH Tokens",
+                                    "type": "line_item",
+                                    "value": 99438
+                                },
+                                {
+                                    "id": "native_tokens",
+                                    "label": "Native Tokens",
+                                    "type": "line_item",
+                                    "value": 161342
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cash_equivalents",
+                            "label": "Cash & Equivalents",
+                            "type": "subsection",
+                            "value": 2660847,
+                            "items": [
+                                {
+                                    "id": "stablecoins",
+                                    "label": "Stablecoins",
+                                    "type": "line_item",
+                                    "value": 1453651
+                                },
+                                {
+                                    "id": "stablecoin_investments",
+                                    "label": "Stablecoin Investments",
+                                    "type": "line_item",
+                                    "value": 1207196
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "liabilities",
+                    "label": "Liabilities",
+                    "type": "section",
+                    "value": 0,
+                    "items": []
+                },
+                {
+                    "id": "equity",
+                    "label": "Equity",
+                    "type": "section",
+                    "value": 5075198,
+                    "items": []
+                }
+            ]
+        },
+        {
+            "2023-03-31": [
+                {
+                    "id": "assets",
+                    "label": "Assets",
+                    "type": "section",
+                    "value": 3862617,
+                    "items": [
+                        {
+                            "id": "non_current_assets",
+                            "label": "Non-current Assets",
+                            "type": "subsection",
+                            "value": 317964,
+                            "items": [
+                                {
+                                    "id": "ethereum_validator",
+                                    "label": "Ethereum Validator",
+                                    "type": "line_item",
+                                    "value": 60264
+                                },
+                                {
+                                    "id": "fantom_validator",
+                                    "label": "Fantom Validator",
+                                    "type": "line_item",
+                                    "value": 249310
+                                },
+                                {
+                                    "id": "fuse_validator",
+                                    "label": "Fuse Validator",
+                                    "type": "line_item",
+                                    "value": 8390
+                                },
+                                {
+                                    "id": "sonic_validator",
+                                    "label": "Sonic Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                }
+                            ]
+                        },
+                        {
+                            "id": "current_assets",
+                            "label": "Current Assets",
+                            "type": "subsection",
+                            "value": 2734368,
+                            "items": [
+                                {
+                                    "id": "market_maker_assets",
+                                    "label": "Market Maker Assets",
+                                    "type": "line_item",
+                                    "value": 442388
+                                },
+                                {
+                                    "id": "protocol_owned_liquidity",
+                                    "label": "Protocol-owned Liquidity",
+                                    "type": "line_item",
+                                    "value": 661721
+                                },
+                                {
+                                    "id": "other_investments",
+                                    "label": "Other Investments",
+                                    "type": "line_item",
+                                    "value": 3297
+                                },
+                                {
+                                    "id": "other_tokens",
+                                    "label": "Other Tokens",
+                                    "type": "line_item",
+                                    "value": 921411
+                                },
+                                {
+                                    "id": "bifi_tokens",
+                                    "label": "BIFI Tokens",
+                                    "type": "line_item",
+                                    "value": 217839
+                                },
+                                {
+                                    "id": "wbtc_tokens",
+                                    "label": "WBTC Tokens",
+                                    "type": "line_item",
+                                    "value": 228353
+                                },
+                                {
+                                    "id": "eth_tokens",
+                                    "label": "ETH Tokens",
+                                    "type": "line_item",
+                                    "value": 27629
+                                },
+                                {
+                                    "id": "native_tokens",
+                                    "label": "Native Tokens",
+                                    "type": "line_item",
+                                    "value": 231729
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cash_equivalents",
+                            "label": "Cash & Equivalents",
+                            "type": "subsection",
+                            "value": 810285,
+                            "items": [
+                                {
+                                    "id": "stablecoins",
+                                    "label": "Stablecoins",
+                                    "type": "line_item",
+                                    "value": 372261
+                                },
+                                {
+                                    "id": "stablecoin_investments",
+                                    "label": "Stablecoin Investments",
+                                    "type": "line_item",
+                                    "value": 438024
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "liabilities",
+                    "label": "Liabilities",
+                    "type": "section",
+                    "value": 0,
+                    "items": []
+                },
+                {
+                    "id": "equity",
+                    "label": "Equity",
+                    "type": "section",
+                    "value": 3862617,
+                    "items": []
+                }
+            ]
+        },
+        {
+            "2022-12-31": [
+                {
+                    "id": "assets",
+                    "label": "Assets",
+                    "type": "section",
+                    "value": 3253194,
+                    "items": [
+                        {
+                            "id": "non_current_assets",
+                            "label": "Non-current Assets",
+                            "type": "subsection",
+                            "value": 149145,
+                            "items": [
+                                {
+                                    "id": "ethereum_validator",
+                                    "label": "Ethereum Validator",
+                                    "type": "line_item",
+                                    "value": 39264
+                                },
+                                {
+                                    "id": "fantom_validator",
+                                    "label": "Fantom Validator",
+                                    "type": "line_item",
+                                    "value": 104261
+                                },
+                                {
+                                    "id": "fuse_validator",
+                                    "label": "Fuse Validator",
+                                    "type": "line_item",
+                                    "value": 5621
+                                },
+                                {
+                                    "id": "sonic_validator",
+                                    "label": "Sonic Validator",
+                                    "type": "line_item",
+                                    "value": 0
+                                }
+                            ]
+                        },
+                        {
+                            "id": "current_assets",
+                            "label": "Current Assets",
+                            "type": "subsection",
+                            "value": 2295751,
+                            "items": [
+                                {
+                                    "id": "market_maker_assets",
+                                    "label": "Market Maker Assets",
+                                    "type": "line_item",
+                                    "value": 340125
+                                },
+                                {
+                                    "id": "protocol_owned_liquidity",
+                                    "label": "Protocol-owned Liquidity",
+                                    "type": "line_item",
+                                    "value": 256475
+                                },
+                                {
+                                    "id": "other_investments",
+                                    "label": "Other Investments",
+                                    "type": "line_item",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "other_tokens",
+                                    "label": "Other Tokens",
+                                    "type": "line_item",
+                                    "value": 890438
+                                },
+                                {
+                                    "id": "bifi_tokens",
+                                    "label": "BIFI Tokens",
+                                    "type": "line_item",
+                                    "value": 321988
+                                },
+                                {
+                                    "id": "wbtc_tokens",
+                                    "label": "WBTC Tokens",
+                                    "type": "line_item",
+                                    "value": 185153
+                                },
+                                {
+                                    "id": "eth_tokens",
+                                    "label": "ETH Tokens",
+                                    "type": "line_item",
+                                    "value": 22856
+                                },
+                                {
+                                    "id": "native_tokens",
+                                    "label": "Native Tokens",
+                                    "type": "line_item",
+                                    "value": 278715
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cash_equivalents",
+                            "label": "Cash & Equivalents",
+                            "type": "subsection",
+                            "value": 808297,
+                            "items": [
+                                {
+                                    "id": "stablecoins",
+                                    "label": "Stablecoins",
+                                    "type": "line_item",
+                                    "value": 280195
+                                },
+                                {
+                                    "id": "stablecoin_investments",
+                                    "label": "Stablecoin Investments",
+                                    "type": "line_item",
+                                    "value": 528102
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "liabilities",
+                    "label": "Liabilities",
+                    "type": "section",
+                    "value": 0,
+                    "items": []
+                },
+                {
+                    "id": "equity",
+                    "label": "Equity",
+                    "type": "section",
+                    "value": 3253194,
+                    "items": []
+                }
+            ]
+        }
+    ]
+}
