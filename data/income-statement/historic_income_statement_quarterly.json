@@ -1,0 +1,1705 @@
+{
+    "statement": "Historic Quarterly Income Statements",
+    "version": "1.0",
+    "entity": "Beefy DAO",
+    "last_updated": "2026-01-06",
+    "currency": "USD",
+    "sections": [
+        {
+            "2025-09-30": [
+                {
+                    "id": "revenues",
+                    "label": "Revenues",
+                    "type": "section",
+                    "value": 504008,
+                    "items": [
+                        {
+                            "id": "treasury_strategy_income",
+                            "label": "Treasury Strategy Income",
+                            "type": "line_item",
+                            "value": 461326
+                        },
+                        {
+                            "id": "integration_income",
+                            "label": "Integration Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "zap_income",
+                            "label": "Zap Income",
+                            "type": "line_item",
+                            "value": 32018
+                        },
+                        {
+                            "id": "validator_income",
+                            "label": "Validator Income",
+                            "type": "line_item",
+                            "value": 4819
+                        },
+                        {
+                            "id": "gauge_vote_incentive_income",
+                            "label": "Gauge Vote Incentive Income",
+                            "type": "line_item",
+                            "value": 5826
+                        },
+                        {
+                            "id": "market_making_income",
+                            "label": "Market Making Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "boost_income",
+                            "label": "Boost Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "on_ramp_income",
+                            "label": "On Ramp Income",
+                            "type": "line_item",
+                            "value": 20
+                        },
+                        {
+                            "id": "grant_funding",
+                            "label": "Grant Funding",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "gross_income",
+                            "label": "Gross Income",
+                            "type": "line_item",
+                            "value": 504008
+                        }
+                    ]
+                },
+                {
+                    "id": "costs",
+                    "label": "Costs",
+                    "type": "section",
+                    "value": -708081,
+                    "items": [
+                        {
+                            "id": "contributor_funding",
+                            "label": "Contributor Funding",
+                            "type": "line_item",
+                            "value": -563768
+                        },
+                        {
+                            "id": "operational_costs",
+                            "label": "Operational Costs",
+                            "type": "line_item",
+                            "value": -27241
+                        },
+                        {
+                            "id": "boost_spending",
+                            "label": "Boost Spending",
+                            "type": "line_item",
+                            "value": -11253
+                        },
+                        {
+                            "id": "marketing_events",
+                            "label": "Marketing & Events",
+                            "type": "line_item",
+                            "value": -28643
+                        },
+                        {
+                            "id": "gauge_vote_incentive_costs",
+                            "label": "Gauge Vote Incentive Costs",
+                            "type": "line_item",
+                            "value": -77177
+                        },
+                        {
+                            "id": "total_costs_expenses",
+                            "label": "Total Costs & Expenses",
+                            "type": "line_item",
+                            "value": -708081
+                        }
+                    ]
+                },
+                {
+                    "id": "net_income",
+                    "label": "Net Income",
+                    "type": "section",
+                    "value": -204074,
+                    "items": []
+                },
+                {
+                    "id": "adjustments",
+                    "label": "Adjustments",
+                    "type": "section",
+                    "value": 86004,
+                    "items": [
+                        {
+                            "id": "income_from_grant_funding",
+                            "label": "Income from Grant Funding",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "grant_spending",
+                            "label": "Grant Spending",
+                            "type": "line_item",
+                            "value": 86004
+                        },
+                        {
+                            "id": "profit_distribution",
+                            "label": "Profit Distribution",
+                            "type": "line_item",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "adjusted_net_income",
+                    "label": "Adjusted Net Income",
+                    "type": "section",
+                    "value": -118069,
+                    "items": []
+                }
+            ],
+            "2025-06-30": [
+                {
+                    "id": "revenues",
+                    "label": "Revenues",
+                    "type": "section",
+                    "value": 667560,
+                    "items": [
+                        {
+                            "id": "treasury_strategy_income",
+                            "label": "Treasury Strategy Income",
+                            "type": "line_item",
+                            "value": 432328
+                        },
+                        {
+                            "id": "integration_income",
+                            "label": "Integration Income",
+                            "type": "line_item",
+                            "value": 60000
+                        },
+                        {
+                            "id": "zap_income",
+                            "label": "Zap Income",
+                            "type": "line_item",
+                            "value": 56313
+                        },
+                        {
+                            "id": "validator_income",
+                            "label": "Validator Income",
+                            "type": "line_item",
+                            "value": 14998
+                        },
+                        {
+                            "id": "gauge_vote_incentive_income",
+                            "label": "Gauge Vote Incentive Income",
+                            "type": "line_item",
+                            "value": 3905
+                        },
+                        {
+                            "id": "market_making_income",
+                            "label": "Market Making Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "boost_income",
+                            "label": "Boost Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "on_ramp_income",
+                            "label": "On Ramp Income",
+                            "type": "line_item",
+                            "value": 16
+                        },
+                        {
+                            "id": "grant_funding",
+                            "label": "Grant Funding",
+                            "type": "line_item",
+                            "value": 100000
+                        },
+                        {
+                            "id": "gross_income",
+                            "label": "Gross Income",
+                            "type": "line_item",
+                            "value": 667560
+                        }
+                    ]
+                },
+                {
+                    "id": "costs",
+                    "label": "Costs",
+                    "type": "section",
+                    "value": -805570,
+                    "items": [
+                        {
+                            "id": "contributor_funding",
+                            "label": "Contributor Funding",
+                            "type": "line_item",
+                            "value": -571064
+                        },
+                        {
+                            "id": "operational_costs",
+                            "label": "Operational Costs",
+                            "type": "line_item",
+                            "value": -150121
+                        },
+                        {
+                            "id": "boost_spending",
+                            "label": "Boost Spending",
+                            "type": "line_item",
+                            "value": -44947
+                        },
+                        {
+                            "id": "marketing_events",
+                            "label": "Marketing & Events",
+                            "type": "line_item",
+                            "value": -26441
+                        },
+                        {
+                            "id": "gauge_vote_incentive_costs",
+                            "label": "Gauge Vote Incentive Costs",
+                            "type": "line_item",
+                            "value": -12998
+                        },
+                        {
+                            "id": "total_costs_expenses",
+                            "label": "Total Costs & Expenses",
+                            "type": "line_item",
+                            "value": -805570
+                        }
+                    ]
+                },
+                {
+                    "id": "net_income",
+                    "label": "Net Income",
+                    "type": "section",
+                    "value": -138011,
+                    "items": []
+                },
+                {
+                    "id": "adjustments",
+                    "label": "Adjustments",
+                    "type": "section",
+                    "value": -42938,
+                    "items": [
+                        {
+                            "id": "income_from_grant_funding",
+                            "label": "Income from Grant Funding",
+                            "type": "line_item",
+                            "value": -100000
+                        },
+                        {
+                            "id": "grant_spending",
+                            "label": "Grant Spending",
+                            "type": "line_item",
+                            "value": 44064
+                        },
+                        {
+                            "id": "profit_distribution",
+                            "label": "Profit Distribution",
+                            "type": "line_item",
+                            "value": 12998
+                        }
+                    ]
+                },
+                {
+                    "id": "adjusted_net_income",
+                    "label": "Adjusted Net Income",
+                    "type": "section",
+                    "value": -180949,
+                    "items": []
+                }
+            ],
+            "2025-03-31": [
+                {
+                    "id": "revenues",
+                    "label": "Revenues",
+                    "type": "section",
+                    "value": 708976,
+                    "items": [
+                        {
+                            "id": "treasury_strategy_income",
+                            "label": "Treasury Strategy Income",
+                            "type": "line_item",
+                            "value": 661004
+                        },
+                        {
+                            "id": "integration_income",
+                            "label": "Integration Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "zap_income",
+                            "label": "Zap Income",
+                            "type": "line_item",
+                            "value": 23024
+                        },
+                        {
+                            "id": "validator_income",
+                            "label": "Validator Income",
+                            "type": "line_item",
+                            "value": 9471
+                        },
+                        {
+                            "id": "gauge_vote_incentive_income",
+                            "label": "Gauge Vote Incentive Income",
+                            "type": "line_item",
+                            "value": 14466
+                        },
+                        {
+                            "id": "market_making_income",
+                            "label": "Market Making Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "boost_income",
+                            "label": "Boost Income",
+                            "type": "line_item",
+                            "value": 1000
+                        },
+                        {
+                            "id": "on_ramp_income",
+                            "label": "On Ramp Income",
+                            "type": "line_item",
+                            "value": 11
+                        },
+                        {
+                            "id": "grant_funding",
+                            "label": "Grant Funding",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "gross_income",
+                            "label": "Gross Income",
+                            "type": "line_item",
+                            "value": 708976
+                        }
+                    ]
+                },
+                {
+                    "id": "costs",
+                    "label": "Costs",
+                    "type": "section",
+                    "value": -844186,
+                    "items": [
+                        {
+                            "id": "contributor_funding",
+                            "label": "Contributor Funding",
+                            "type": "line_item",
+                            "value": -575662
+                        },
+                        {
+                            "id": "operational_costs",
+                            "label": "Operational Costs",
+                            "type": "line_item",
+                            "value": -153183
+                        },
+                        {
+                            "id": "boost_spending",
+                            "label": "Boost Spending",
+                            "type": "line_item",
+                            "value": -31337
+                        },
+                        {
+                            "id": "marketing_events",
+                            "label": "Marketing & Events",
+                            "type": "line_item",
+                            "value": -37972
+                        },
+                        {
+                            "id": "gauge_vote_incentive_costs",
+                            "label": "Gauge Vote Incentive Costs",
+                            "type": "line_item",
+                            "value": -46032
+                        },
+                        {
+                            "id": "total_costs_expenses",
+                            "label": "Total Costs & Expenses",
+                            "type": "line_item",
+                            "value": -844186
+                        }
+                    ]
+                },
+                {
+                    "id": "net_income",
+                    "label": "Net Income",
+                    "type": "section",
+                    "value": -135210,
+                    "items": []
+                },
+                {
+                    "id": "adjustments",
+                    "label": "Adjustments",
+                    "type": "section",
+                    "value": 78882,
+                    "items": [
+                        {
+                            "id": "income_from_grant_funding",
+                            "label": "Income from Grant Funding",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "grant_spending",
+                            "label": "Grant Spending",
+                            "type": "line_item",
+                            "value": 39362
+                        },
+                        {
+                            "id": "profit_distribution",
+                            "label": "Profit Distribution",
+                            "type": "line_item",
+                            "value": 39519
+                        }
+                    ]
+                },
+                {
+                    "id": "adjusted_net_income",
+                    "label": "Adjusted Net Income",
+                    "type": "section",
+                    "value": -56329,
+                    "items": []
+                }
+            ],
+            "2024-12-31": [
+                {
+                    "id": "revenues",
+                    "label": "Revenues",
+                    "type": "section",
+                    "value": 779226,
+                    "items": [
+                        {
+                            "id": "treasury_strategy_income",
+                            "label": "Treasury Strategy Income",
+                            "type": "line_item",
+                            "value": 730123
+                        },
+                        {
+                            "id": "integration_income",
+                            "label": "Integration Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "zap_income",
+                            "label": "Zap Income",
+                            "type": "line_item",
+                            "value": 39477
+                        },
+                        {
+                            "id": "validator_income",
+                            "label": "Validator Income",
+                            "type": "line_item",
+                            "value": 6957
+                        },
+                        {
+                            "id": "gauge_vote_incentive_income",
+                            "label": "Gauge Vote Incentive Income",
+                            "type": "line_item",
+                            "value": 1567
+                        },
+                        {
+                            "id": "market_making_income",
+                            "label": "Market Making Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "boost_income",
+                            "label": "Boost Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "on_ramp_income",
+                            "label": "On Ramp Income",
+                            "type": "line_item",
+                            "value": 107
+                        },
+                        {
+                            "id": "grant_funding",
+                            "label": "Grant Funding",
+                            "type": "line_item",
+                            "value": 995
+                        },
+                        {
+                            "id": "gross_income",
+                            "label": "Gross Income",
+                            "type": "line_item",
+                            "value": 779226
+                        }
+                    ]
+                },
+                {
+                    "id": "costs",
+                    "label": "Costs",
+                    "type": "section",
+                    "value": -921097,
+                    "items": [
+                        {
+                            "id": "contributor_funding",
+                            "label": "Contributor Funding",
+                            "type": "line_item",
+                            "value": -550050
+                        },
+                        {
+                            "id": "operational_costs",
+                            "label": "Operational Costs",
+                            "type": "line_item",
+                            "value": -134596
+                        },
+                        {
+                            "id": "boost_spending",
+                            "label": "Boost Spending",
+                            "type": "line_item",
+                            "value": -173985
+                        },
+                        {
+                            "id": "marketing_events",
+                            "label": "Marketing & Events",
+                            "type": "line_item",
+                            "value": -52085
+                        },
+                        {
+                            "id": "gauge_vote_incentive_costs",
+                            "label": "Gauge Vote Incentive Costs",
+                            "type": "line_item",
+                            "value": -10381
+                        },
+                        {
+                            "id": "total_costs_expenses",
+                            "label": "Total Costs & Expenses",
+                            "type": "line_item",
+                            "value": -921097
+                        }
+                    ]
+                },
+                {
+                    "id": "net_income",
+                    "label": "Net Income",
+                    "type": "section",
+                    "value": -141871,
+                    "items": []
+                },
+                {
+                    "id": "adjustments",
+                    "label": "Adjustments",
+                    "type": "section",
+                    "value": 212481,
+                    "items": [
+                        {
+                            "id": "income_from_grant_funding",
+                            "label": "Income from Grant Funding",
+                            "type": "line_item",
+                            "value": -995
+                        },
+                        {
+                            "id": "grant_spending",
+                            "label": "Grant Spending",
+                            "type": "line_item",
+                            "value": 126959
+                        },
+                        {
+                            "id": "profit_distribution",
+                            "label": "Profit Distribution",
+                            "type": "line_item",
+                            "value": 86517
+                        }
+                    ]
+                },
+                {
+                    "id": "adjusted_net_income",
+                    "label": "Adjusted Net Income",
+                    "type": "section",
+                    "value": 70610,
+                    "items": []
+                }
+            ],
+            "2024-09-30": [
+                {
+                    "id": "revenues",
+                    "label": "Revenues",
+                    "type": "section",
+                    "value": 952335,
+                    "items": [
+                        {
+                            "id": "treasury_strategy_income",
+                            "label": "Treasury Strategy Income",
+                            "type": "line_item",
+                            "value": 701378
+                        },
+                        {
+                            "id": "integration_income",
+                            "label": "Integration Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "zap_income",
+                            "label": "Zap Income",
+                            "type": "line_item",
+                            "value": 64701
+                        },
+                        {
+                            "id": "validator_income",
+                            "label": "Validator Income",
+                            "type": "line_item",
+                            "value": 3013
+                        },
+                        {
+                            "id": "gauge_vote_incentive_income",
+                            "label": "Gauge Vote Incentive Income",
+                            "type": "line_item",
+                            "value": 802
+                        },
+                        {
+                            "id": "market_making_income",
+                            "label": "Market Making Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "boost_income",
+                            "label": "Boost Income",
+                            "type": "line_item",
+                            "value": 2137
+                        },
+                        {
+                            "id": "on_ramp_income",
+                            "label": "On Ramp Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "grant_funding",
+                            "label": "Grant Funding",
+                            "type": "line_item",
+                            "value": 180304
+                        },
+                        {
+                            "id": "gross_income",
+                            "label": "Gross Income",
+                            "type": "line_item",
+                            "value": 952335
+                        }
+                    ]
+                },
+                {
+                    "id": "costs",
+                    "label": "Costs",
+                    "type": "section",
+                    "value": -893010,
+                    "items": [
+                        {
+                            "id": "contributor_funding",
+                            "label": "Contributor Funding",
+                            "type": "line_item",
+                            "value": -605799
+                        },
+                        {
+                            "id": "operational_costs",
+                            "label": "Operational Costs",
+                            "type": "line_item",
+                            "value": -149866
+                        },
+                        {
+                            "id": "boost_spending",
+                            "label": "Boost Spending",
+                            "type": "line_item",
+                            "value": -90546
+                        },
+                        {
+                            "id": "marketing_events",
+                            "label": "Marketing & Events",
+                            "type": "line_item",
+                            "value": -28965
+                        },
+                        {
+                            "id": "gauge_vote_incentive_costs",
+                            "label": "Gauge Vote Incentive Costs",
+                            "type": "line_item",
+                            "value": -17834
+                        },
+                        {
+                            "id": "total_costs_expenses",
+                            "label": "Total Costs & Expenses",
+                            "type": "line_item",
+                            "value": -893010
+                        }
+                    ]
+                },
+                {
+                    "id": "net_income",
+                    "label": "Net Income",
+                    "type": "section",
+                    "value": 59325,
+                    "items": []
+                },
+                {
+                    "id": "adjustments",
+                    "label": "Adjustments",
+                    "type": "section",
+                    "value": 15932,
+                    "items": [
+                        {
+                            "id": "income_from_grant_funding",
+                            "label": "Income from Grant Funding",
+                            "type": "line_item",
+                            "value": -180304
+                        },
+                        {
+                            "id": "grant_spending",
+                            "label": "Grant Spending",
+                            "type": "line_item",
+                            "value": 86480
+                        },
+                        {
+                            "id": "profit_distribution",
+                            "label": "Profit Distribution",
+                            "type": "line_item",
+                            "value": 109756
+                        }
+                    ]
+                },
+                {
+                    "id": "adjusted_net_income",
+                    "label": "Adjusted Net Income",
+                    "type": "section",
+                    "value": 75257,
+                    "items": []
+                }
+            ],
+            "2024-06-30": [
+                {
+                    "id": "revenues",
+                    "label": "Revenues",
+                    "type": "section",
+                    "value": 1053457,
+                    "items": [
+                        {
+                            "id": "treasury_strategy_income",
+                            "label": "Treasury Strategy Income",
+                            "type": "line_item",
+                            "value": 965546
+                        },
+                        {
+                            "id": "integration_income",
+                            "label": "Integration Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "zap_income",
+                            "label": "Zap Income",
+                            "type": "line_item",
+                            "value": 56750
+                        },
+                        {
+                            "id": "validator_income",
+                            "label": "Validator Income",
+                            "type": "line_item",
+                            "value": 11027
+                        },
+                        {
+                            "id": "gauge_vote_incentive_income",
+                            "label": "Gauge Vote Incentive Income",
+                            "type": "line_item",
+                            "value": 19542
+                        },
+                        {
+                            "id": "market_making_income",
+                            "label": "Market Making Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "boost_income",
+                            "label": "Boost Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "on_ramp_income",
+                            "label": "On Ramp Income",
+                            "type": "line_item",
+                            "value": 592
+                        },
+                        {
+                            "id": "grant_funding",
+                            "label": "Grant Funding",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "gross_income",
+                            "label": "Gross Income",
+                            "type": "line_item",
+                            "value": 1053457
+                        }
+                    ]
+                },
+                {
+                    "id": "costs",
+                    "label": "Costs",
+                    "type": "section",
+                    "value": -803548,
+                    "items": [
+                        {
+                            "id": "contributor_funding",
+                            "label": "Contributor Funding",
+                            "type": "line_item",
+                            "value": -487894
+                        },
+                        {
+                            "id": "operational_costs",
+                            "label": "Operational Costs",
+                            "type": "line_item",
+                            "value": -173123
+                        },
+                        {
+                            "id": "boost_spending",
+                            "label": "Boost Spending",
+                            "type": "line_item",
+                            "value": -43289
+                        },
+                        {
+                            "id": "marketing_events",
+                            "label": "Marketing & Events",
+                            "type": "line_item",
+                            "value": -52949
+                        },
+                        {
+                            "id": "gauge_vote_incentive_costs",
+                            "label": "Gauge Vote Incentive Costs",
+                            "type": "line_item",
+                            "value": -46294
+                        },
+                        {
+                            "id": "total_costs_expenses",
+                            "label": "Total Costs & Expenses",
+                            "type": "line_item",
+                            "value": -803548
+                        }
+                    ]
+                },
+                {
+                    "id": "net_income",
+                    "label": "Net Income",
+                    "type": "section",
+                    "value": 249908,
+                    "items": []
+                },
+                {
+                    "id": "adjustments",
+                    "label": "Adjustments",
+                    "type": "section",
+                    "value": 107997,
+                    "items": [
+                        {
+                            "id": "income_from_grant_funding",
+                            "label": "Income from Grant Funding",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "grant_spending",
+                            "label": "Grant Spending",
+                            "type": "line_item",
+                            "value": 107997
+                        },
+                        {
+                            "id": "profit_distribution",
+                            "label": "Profit Distribution",
+                            "type": "line_item",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "adjusted_net_income",
+                    "label": "Adjusted Net Income",
+                    "type": "section",
+                    "value": 357905,
+                    "items": []
+                }
+            ],
+            "2024-03-31": [
+                {
+                    "id": "revenues",
+                    "label": "Revenues",
+                    "type": "section",
+                    "value": 579520,
+                    "items": [
+                        {
+                            "id": "treasury_strategy_income",
+                            "label": "Treasury Strategy Income",
+                            "type": "line_item",
+                            "value": 482283
+                        },
+                        {
+                            "id": "integration_income",
+                            "label": "Integration Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "zap_income",
+                            "label": "Zap Income",
+                            "type": "line_item",
+                            "value": 18380
+                        },
+                        {
+                            "id": "validator_income",
+                            "label": "Validator Income",
+                            "type": "line_item",
+                            "value": 56100
+                        },
+                        {
+                            "id": "gauge_vote_incentive_income",
+                            "label": "Gauge Vote Incentive Income",
+                            "type": "line_item",
+                            "value": 12753
+                        },
+                        {
+                            "id": "market_making_income",
+                            "label": "Market Making Income",
+                            "type": "line_item",
+                            "value": 9892
+                        },
+                        {
+                            "id": "boost_income",
+                            "label": "Boost Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "on_ramp_income",
+                            "label": "On Ramp Income",
+                            "type": "line_item",
+                            "value": 112
+                        },
+                        {
+                            "id": "grant_funding",
+                            "label": "Grant Funding",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "gross_income",
+                            "label": "Gross Income",
+                            "type": "line_item",
+                            "value": 579520
+                        }
+                    ]
+                },
+                {
+                    "id": "costs",
+                    "label": "Costs",
+                    "type": "section",
+                    "value": -754461,
+                    "items": [
+                        {
+                            "id": "contributor_funding",
+                            "label": "Contributor Funding",
+                            "type": "line_item",
+                            "value": -408811
+                        },
+                        {
+                            "id": "operational_costs",
+                            "label": "Operational Costs",
+                            "type": "line_item",
+                            "value": -173072
+                        },
+                        {
+                            "id": "boost_spending",
+                            "label": "Boost Spending",
+                            "type": "line_item",
+                            "value": -57792
+                        },
+                        {
+                            "id": "marketing_events",
+                            "label": "Marketing & Events",
+                            "type": "line_item",
+                            "value": -75502
+                        },
+                        {
+                            "id": "gauge_vote_incentive_costs",
+                            "label": "Gauge Vote Incentive Costs",
+                            "type": "line_item",
+                            "value": -39284
+                        },
+                        {
+                            "id": "total_costs_expenses",
+                            "label": "Total Costs & Expenses",
+                            "type": "line_item",
+                            "value": -754461
+                        }
+                    ]
+                },
+                {
+                    "id": "net_income",
+                    "label": "Net Income",
+                    "type": "section",
+                    "value": -174941,
+                    "items": []
+                },
+                {
+                    "id": "adjustments",
+                    "label": "Adjustments",
+                    "type": "section",
+                    "value": 139076,
+                    "items": [
+                        {
+                            "id": "income_from_grant_funding",
+                            "label": "Income from Grant Funding",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "grant_spending",
+                            "label": "Grant Spending",
+                            "type": "line_item",
+                            "value": 139076
+                        },
+                        {
+                            "id": "profit_distribution",
+                            "label": "Profit Distribution",
+                            "type": "line_item",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "adjusted_net_income",
+                    "label": "Adjusted Net Income",
+                    "type": "section",
+                    "value": -35865,
+                    "items": []
+                }
+            ],
+            "2023-12-31": [
+                {
+                    "id": "revenues",
+                    "label": "Revenues",
+                    "type": "section",
+                    "value": 412240,
+                    "items": [
+                        {
+                            "id": "treasury_strategy_income",
+                            "label": "Treasury Strategy Income",
+                            "type": "line_item",
+                            "value": 226818
+                        },
+                        {
+                            "id": "integration_income",
+                            "label": "Integration Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "zap_income",
+                            "label": "Zap Income",
+                            "type": "line_item",
+                            "value": 2112
+                        },
+                        {
+                            "id": "validator_income",
+                            "label": "Validator Income",
+                            "type": "line_item",
+                            "value": 35397
+                        },
+                        {
+                            "id": "gauge_vote_incentive_income",
+                            "label": "Gauge Vote Incentive Income",
+                            "type": "line_item",
+                            "value": 3176
+                        },
+                        {
+                            "id": "market_making_income",
+                            "label": "Market Making Income",
+                            "type": "line_item",
+                            "value": 2635
+                        },
+                        {
+                            "id": "boost_income",
+                            "label": "Boost Income",
+                            "type": "line_item",
+                            "value": 1633
+                        },
+                        {
+                            "id": "on_ramp_income",
+                            "label": "On Ramp Income",
+                            "type": "line_item",
+                            "value": 110
+                        },
+                        {
+                            "id": "grant_funding",
+                            "label": "Grant Funding",
+                            "type": "line_item",
+                            "value": 140359
+                        },
+                        {
+                            "id": "gross_income",
+                            "label": "Gross Income",
+                            "type": "line_item",
+                            "value": 412240
+                        }
+                    ]
+                },
+                {
+                    "id": "costs",
+                    "label": "Costs",
+                    "type": "section",
+                    "value": -588757,
+                    "items": [
+                        {
+                            "id": "contributor_funding",
+                            "label": "Contributor Funding",
+                            "type": "line_item",
+                            "value": -409228
+                        },
+                        {
+                            "id": "operational_costs",
+                            "label": "Operational Costs",
+                            "type": "line_item",
+                            "value": -57895
+                        },
+                        {
+                            "id": "boost_spending",
+                            "label": "Boost Spending",
+                            "type": "line_item",
+                            "value": -116355
+                        },
+                        {
+                            "id": "marketing_events",
+                            "label": "Marketing & Events",
+                            "type": "line_item",
+                            "value": -5279
+                        },
+                        {
+                            "id": "gauge_vote_incentive_costs",
+                            "label": "Gauge Vote Incentive Costs",
+                            "type": "line_item",
+                            "value": -23594
+                        },
+                        {
+                            "id": "total_costs_expenses",
+                            "label": "Total Costs & Expenses",
+                            "type": "line_item",
+                            "value": -588757
+                        }
+                    ]
+                },
+                {
+                    "id": "net_income",
+                    "label": "Net Income",
+                    "type": "section",
+                    "value": -176518,
+                    "items": []
+                },
+                {
+                    "id": "adjustments",
+                    "label": "Adjustments",
+                    "type": "section",
+                    "value": -409,
+                    "items": [
+                        {
+                            "id": "income_from_grant_funding",
+                            "label": "Income from Grant Funding",
+                            "type": "line_item",
+                            "value": -140359
+                        },
+                        {
+                            "id": "grant_spending",
+                            "label": "Grant Spending",
+                            "type": "line_item",
+                            "value": 139949
+                        },
+                        {
+                            "id": "profit_distribution",
+                            "label": "Profit Distribution",
+                            "type": "line_item",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "adjusted_net_income",
+                    "label": "Adjusted Net Income",
+                    "type": "section",
+                    "value": -176927,
+                    "items": []
+                }
+            ],
+            "2023-09-30": [
+                {
+                    "id": "revenues",
+                    "label": "Revenues",
+                    "type": "section",
+                    "value": 393344,
+                    "items": [
+                        {
+                            "id": "treasury_strategy_income",
+                            "label": "Treasury Strategy Income",
+                            "type": "line_item",
+                            "value": 349619
+                        },
+                        {
+                            "id": "integration_income",
+                            "label": "Integration Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "zap_income",
+                            "label": "Zap Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "validator_income",
+                            "label": "Validator Income",
+                            "type": "line_item",
+                            "value": 27486
+                        },
+                        {
+                            "id": "gauge_vote_incentive_income",
+                            "label": "Gauge Vote Incentive Income",
+                            "type": "line_item",
+                            "value": 13332
+                        },
+                        {
+                            "id": "market_making_income",
+                            "label": "Market Making Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "boost_income",
+                            "label": "Boost Income",
+                            "type": "line_item",
+                            "value": 2891
+                        },
+                        {
+                            "id": "on_ramp_income",
+                            "label": "On Ramp Income",
+                            "type": "line_item",
+                            "value": 16
+                        },
+                        {
+                            "id": "grant_funding",
+                            "label": "Grant Funding",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "gross_income",
+                            "label": "Gross Income",
+                            "type": "line_item",
+                            "value": 393344
+                        }
+                    ]
+                },
+                {
+                    "id": "costs",
+                    "label": "Costs",
+                    "type": "section",
+                    "value": -630971,
+                    "items": [
+                        {
+                            "id": "contributor_funding",
+                            "label": "Contributor Funding",
+                            "type": "line_item",
+                            "value": -398295
+                        },
+                        {
+                            "id": "operational_costs",
+                            "label": "Operational Costs",
+                            "type": "line_item",
+                            "value": -70739
+                        },
+                        {
+                            "id": "boost_spending",
+                            "label": "Boost Spending",
+                            "type": "line_item",
+                            "value": -115151
+                        },
+                        {
+                            "id": "marketing_events",
+                            "label": "Marketing & Events",
+                            "type": "line_item",
+                            "value": -46786
+                        },
+                        {
+                            "id": "gauge_vote_incentive_costs",
+                            "label": "Gauge Vote Incentive Costs",
+                            "type": "line_item",
+                            "value": -5704
+                        },
+                        {
+                            "id": "total_costs_expenses",
+                            "label": "Total Costs & Expenses",
+                            "type": "line_item",
+                            "value": -630971
+                        }
+                    ]
+                },
+                {
+                    "id": "net_income",
+                    "label": "Net Income",
+                    "type": "section",
+                    "value": -237627,
+                    "items": []
+                },
+                {
+                    "id": "adjustments",
+                    "label": "Adjustments",
+                    "type": "section",
+                    "value": 117855,
+                    "items": [
+                        {
+                            "id": "income_from_grant_funding",
+                            "label": "Income from Grant Funding",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "grant_spending",
+                            "label": "Grant Spending",
+                            "type": "line_item",
+                            "value": 117855
+                        },
+                        {
+                            "id": "profit_distribution",
+                            "label": "Profit Distribution",
+                            "type": "line_item",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "adjusted_net_income",
+                    "label": "Adjusted Net Income",
+                    "type": "section",
+                    "value": -119772,
+                    "items": []
+                }
+            ],
+            "2023-06-30": [
+                {
+                    "id": "revenues",
+                    "label": "Revenues",
+                    "type": "section",
+                    "value": 631613,
+                    "items": [
+                        {
+                            "id": "treasury_strategy_income",
+                            "label": "Treasury Strategy Income",
+                            "type": "line_item",
+                            "value": 535396
+                        },
+                        {
+                            "id": "integration_income",
+                            "label": "Integration Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "zap_income",
+                            "label": "Zap Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "validator_income",
+                            "label": "Validator Income",
+                            "type": "line_item",
+                            "value": 39746
+                        },
+                        {
+                            "id": "gauge_vote_incentive_income",
+                            "label": "Gauge Vote Incentive Income",
+                            "type": "line_item",
+                            "value": 46801
+                        },
+                        {
+                            "id": "market_making_income",
+                            "label": "Market Making Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "boost_income",
+                            "label": "Boost Income",
+                            "type": "line_item",
+                            "value": 2734
+                        },
+                        {
+                            "id": "on_ramp_income",
+                            "label": "On Ramp Income",
+                            "type": "line_item",
+                            "value": 96
+                        },
+                        {
+                            "id": "grant_funding",
+                            "label": "Grant Funding",
+                            "type": "line_item",
+                            "value": 6840
+                        },
+                        {
+                            "id": "gross_income",
+                            "label": "Gross Income",
+                            "type": "line_item",
+                            "value": 631613
+                        }
+                    ]
+                },
+                {
+                    "id": "costs",
+                    "label": "Costs",
+                    "type": "section",
+                    "value": -538020,
+                    "items": [
+                        {
+                            "id": "contributor_funding",
+                            "label": "Contributor Funding",
+                            "type": "line_item",
+                            "value": -316810
+                        },
+                        {
+                            "id": "operational_costs",
+                            "label": "Operational Costs",
+                            "type": "line_item",
+                            "value": -168165
+                        },
+                        {
+                            "id": "boost_spending",
+                            "label": "Boost Spending",
+                            "type": "line_item",
+                            "value": -11172
+                        },
+                        {
+                            "id": "marketing_events",
+                            "label": "Marketing & Events",
+                            "type": "line_item",
+                            "value": -41873
+                        },
+                        {
+                            "id": "gauge_vote_incentive_costs",
+                            "label": "Gauge Vote Incentive Costs",
+                            "type": "line_item",
+                            "value": -113516
+                        },
+                        {
+                            "id": "total_costs_expenses",
+                            "label": "Total Costs & Expenses",
+                            "type": "line_item",
+                            "value": -538020
+                        }
+                    ]
+                },
+                {
+                    "id": "net_income",
+                    "label": "Net Income",
+                    "type": "section",
+                    "value": 93593,
+                    "items": []
+                },
+                {
+                    "id": "adjustments",
+                    "label": "Adjustments",
+                    "type": "section",
+                    "value": 116884,
+                    "items": [
+                        {
+                            "id": "income_from_grant_funding",
+                            "label": "Income from Grant Funding",
+                            "type": "line_item",
+                            "value": -6840
+                        },
+                        {
+                            "id": "grant_spending",
+                            "label": "Grant Spending",
+                            "type": "line_item",
+                            "value": 123724
+                        },
+                        {
+                            "id": "profit_distribution",
+                            "label": "Profit Distribution",
+                            "type": "line_item",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "adjusted_net_income",
+                    "label": "Adjusted Net Income",
+                    "type": "section",
+                    "value": 210477,
+                    "items": []
+                }
+            ],
+            "2023-03-31": [
+                {
+                    "id": "revenues",
+                    "label": "Revenues",
+                    "type": "section",
+                    "value": 739115,
+                    "items": [
+                        {
+                            "id": "treasury_strategy_income",
+                            "label": "Treasury Strategy Income",
+                            "type": "line_item",
+                            "value": 507988
+                        },
+                        {
+                            "id": "integration_income",
+                            "label": "Integration Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "zap_income",
+                            "label": "Zap Income",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "validator_income",
+                            "label": "Validator Income",
+                            "type": "line_item",
+                            "value": 40224
+                        },
+                        {
+                            "id": "gauge_vote_incentive_income",
+                            "label": "Gauge Vote Incentive Income",
+                            "type": "line_item",
+                            "value": 3012
+                        },
+                        {
+                            "id": "market_making_income",
+                            "label": "Market Making Income",
+                            "type": "line_item",
+                            "value": 8831
+                        },
+                        {
+                            "id": "boost_income",
+                            "label": "Boost Income",
+                            "type": "line_item",
+                            "value": 1295
+                        },
+                        {
+                            "id": "on_ramp_income",
+                            "label": "On Ramp Income",
+                            "type": "line_item",
+                            "value": 189
+                        },
+                        {
+                            "id": "grant_funding",
+                            "label": "Grant Funding",
+                            "type": "line_item",
+                            "value": 177576
+                        },
+                        {
+                            "id": "gross_income",
+                            "label": "Gross Income",
+                            "type": "line_item",
+                            "value": 739115
+                        }
+                    ]
+                },
+                {
+                    "id": "costs",
+                    "label": "Costs",
+                    "type": "section",
+                    "value": -466636,
+                    "items": [
+                        {
+                            "id": "contributor_funding",
+                            "label": "Contributor Funding",
+                            "type": "line_item",
+                            "value": -306862
+                        },
+                        {
+                            "id": "operational_costs",
+                            "label": "Operational Costs",
+                            "type": "line_item",
+                            "value": -103398
+                        },
+                        {
+                            "id": "boost_spending",
+                            "label": "Boost Spending",
+                            "type": "line_item",
+                            "value": 0
+                        },
+                        {
+                            "id": "marketing_events",
+                            "label": "Marketing & Events",
+                            "type": "line_item",
+                            "value": -56376
+                        },
+                        {
+                            "id": "gauge_vote_incentive_costs",
+                            "label": "Gauge Vote Incentive Costs",
+                            "type": "line_item",
+                            "value": -124399
+                        },
+                        {
+                            "id": "total_costs_expenses",
+                            "label": "Total Costs & Expenses",
+                            "type": "line_item",
+                            "value": -466636
+                        }
+                    ]
+                },
+                {
+                    "id": "net_income",
+                    "label": "Net Income",
+                    "type": "section",
+                    "value": 272479,
+                    "items": []
+                },
+                {
+                    "id": "adjustments",
+                    "label": "Adjustments",
+                    "type": "section",
+                    "value": 4882,
+                    "items": [
+                        {
+                            "id": "income_from_grant_funding",
+                            "label": "Income from Grant Funding",
+                            "type": "line_item",
+                            "value": -177576
+                        },
+                        {
+                            "id": "grant_spending",
+                            "label": "Grant Spending",
+                            "type": "line_item",
+                            "value": 182458
+                        },
+                        {
+                            "id": "profit_distribution",
+                            "label": "Profit Distribution",
+                            "type": "line_item",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "adjusted_net_income",
+                    "label": "Adjusted Net Income",
+                    "type": "section",
+                    "value": 277361,
+                    "items": []
+                }
+            ]
+        }
+    ]
+}

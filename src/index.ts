@@ -7,6 +7,7 @@ import articlesRoutes from './routes/articlesRoutes.js';
 import linksRoutes from './routes/linksRoutes.js';
 import portfolioRoutes from './routes/portfolioRoutes.js';
 import balanceSheetRoutes from './routes/balanceSheetRoutes.js';
+import incomeStatementRoutes from './routes/incomeStatementRoutes.js';
 
 dotenv.config({ quiet: true });
 
@@ -32,6 +33,10 @@ app.get('/', (req: Request, res: Response) => {
       'POST /portfolio/update': "Trigger portfolio update (requires x-cron-secret header).",
       'GET /beefy/balance-sheet': "Beefy DAO's balance sheet.",
       'GET /beefy/balance-sheet/historic': "Historic balance sheets for Beefy DAO.",
+      'GET /beefy/income-statement/annual': "Beefy DAO's most-recent annual income statement.",
+      'GET /beefy/income-statement/quarter': "Beefy DAO's most-recent quarterly income statement.",
+      'GET /beefy/income-statement/annual/historic': "Historic annual income statements for Beefy DAO.",
+      'GET /beefy/income-statement/quarter/historic': "Historic quarterly income statements for Beefy DAO."
     }
   });
 });
@@ -46,17 +51,22 @@ app.use('/articles', articlesRoutes);
 app.use('/links', linksRoutes);
 app.use('/portfolio', portfolioRoutes);
 app.use('/beefy/balance-sheet', balanceSheetRoutes);
+app.use('/beefy/income-statement', incomeStatementRoutes);
 
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log(`\nEndpoints:`);
-  console.log(`  • GET  /health                       - Health check`);
-  console.log(`  • GET  /accounts                     - Summary of Staworth's onchain accounts`);
-  console.log(`  • GET  /articles                     - Staworth's published articles`);
-  console.log(`  • GET  /links                        - Staworth's important links`);
-  console.log(`  • GET  /portfolio                    - Staworth's portfolio holdings`);
-  console.log(`  • POST /portfolio/update             - Trigger portfolio update (requires x-cron-secret header)`);
-  console.log(`  • GET  /beefy/balance-sheet          - Beefy DAO's balance sheet`);
-  console.log(`  • GET  /beefy/balance-sheet/historic - Historic balance sheets for Beefy DAO`);
+  console.log(`  • GET  /health                                  - Health check`);
+  console.log(`  • GET  /accounts                                - Summary of Staworth's onchain accounts`);
+  console.log(`  • GET  /articles                                - Staworth's published articles`);
+  console.log(`  • GET  /links                                   - Staworth's important links`);
+  console.log(`  • GET  /portfolio                               - Staworth's portfolio holdings`);
+  console.log(`  • POST /portfolio/update                        - Trigger portfolio update (requires x-cron-secret header)`);
+  console.log(`  • GET  /beefy/balance-sheet                     - Beefy DAO's balance sheet`);
+  console.log(`  • GET  /beefy/balance-sheet/historic            - Historic balance sheets for Beefy DAO`);
+  console.log(`  • GET  /beefy/income-statement/annual           - Beefy DAO's most-recent annual income statement`);
+  console.log(`  • GET  /beefy/income-statement/quarter          - Beefy DAO's most-recent quarterly income statement`);
+  console.log(`  • GET  /beefy/income-statement/annual/historic  - Historic annual income statements for Beefy DAO`);
+  console.log(`  • GET  /beefy/income-statement/quarter/historic - Historic quarterly income statements for Beefy DAO`);
 });

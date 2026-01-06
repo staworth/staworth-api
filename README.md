@@ -43,6 +43,10 @@ Runs the test suite using Vitest, including blockchain integration and portfolio
 | POST | `/portfolio/update` | Trigger portfolio update (requires `x-cron-secret` header) |
 | GET | `/beefy/balance-sheet` | Beefy DAO's balance sheet |
 | GET | `/beefy/balance-sheet/historic` | Historic balance sheets for Beefy DAO |
+| GET | `/beefy/income-statement/annual` | Beefy DAO's most-recent annual income statement |
+| GET | `/beefy/income-statement/quarter` | Beefy DAO's most-recent quarterly income statement |
+| GET | `/beefy/income-statement/annual/historic` | Historic annual income statements for Beefy DAO |
+| GET | `/beefy/income-statement/quarter/historic` | Historic quarterly income statements for Beefy DAO |
 
 ## Features
 
