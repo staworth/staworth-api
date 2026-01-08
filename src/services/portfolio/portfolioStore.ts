@@ -1,10 +1,9 @@
 import type { Portfolio } from '../../types/portfolio.js';
 
-const baseUrl = process.env.PORTFOLIO_STORE_URL;
-const token = process.env.PORTFOLIO_STORE_TOKEN;
 const KEY = 'portfolio';
 
-function requireEnv(name: string, value: string | undefined): string {
+function requireEnv(name: string): string {
+  const value = process.env[name];
   if (!value) throw new Error(`${name} is not set`);
   return value;
 }
@@ -13,7 +12,7 @@ async function fetchJson<T>(url: string, init: RequestInit): Promise<T> {
   const res = await fetch(url, {
     ...init,
     headers: {
-      Authorization: `Bearer ${requireEnv('PORTFOLIO_STORE_TOKEN', token)}`,
+      Authorization: `Bearer ${requireEnv('PORTFOLIO_STORE_TOKEN')}`,
       'Content-Type': 'application/json',
       ...(init.headers || {}),
     },
@@ -26,7 +25,7 @@ async function fetchJson<T>(url: string, init: RequestInit): Promise<T> {
 }
 
 export async function readPortfolioFromStore(): Promise<Portfolio> {
-  const url = `${requireEnv('PORTFOLIO_STORE_URL', baseUrl)}get/${KEY}`;
+  const url = `${requireEnv('PORTFOLIO_STORE_URL')}get/${KEY}`;
   const data = await fetchJson<{ result?: string | null }>(url, { method: 'GET' });
   
   // Upstash returns { result: "..." }
@@ -48,7 +47,7 @@ export async function readPortfolioFromStore(): Promise<Portfolio> {
 }
 
 export async function writePortfolioToStore(portfolio: Portfolio): Promise<void> {
-  const url = `${requireEnv('PORTFOLIO_STORE_URL', baseUrl)}set/${KEY}`;
+  const url = `${requireEnv('PORTFOLIO_STORE_URL')}set/${KEY}`;
   const serialized = JSON.stringify(portfolio);
   await fetchJson(url, {
     method: 'POST',
