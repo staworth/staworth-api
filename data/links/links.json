@@ -29,29 +29,34 @@
     "img": "/images/links/linkedin.webp",
     "label": "LinkedIn"
   },
+  "Substack": {
+    "link": "https://substack.com/@staworth",
+    "img": "/image/links/substack.webp",
+    "label": "Substack"
+  },
   "Paragraph": {
     "link": "https://paragraph.com/@staworth",
     "img": "/images/links/paragraph.webp",
     "label": "Paragraph"
-  },
-  "Farcaster": {
-    "link": "https://warpcast.com/staworth",
-    "img": "/images/links/farcaster.webp",
-    "label": "Farcaster"
   },
   "YouTube": {
     "link": "https://www.youtube.com/@Staworth",
     "img": "/images/links/youtube.webp",
     "label": "YouTube"
   },
+  "Dune": {
+    "link": "https://dune.com/staworth",
+    "img": "images/links/dune.webp",
+    "label": "Dune"
+  },
+  "Farcaster": {
+    "link": "https://warpcast.com/staworth",
+    "img": "/images/links/farcaster.webp",
+    "label": "Farcaster"
+  },
   "Snapshot": {
     "link": "https://snapshot.org/#/profile/0x76c32eF9587b07c77545Ad1a86E02fC1f045a3b9",
     "img": "/images/links/snapshot.webp",
     "label": "Snapshot"
-  },
-  "DeBank": {
-    "link": "https://debank.com/profile/0x72E7197DA72FbC51828fa82CBa8683Bf0B6acf5e",
-    "img": "/images/links/debank.webp",
-    "label": "DeBank"
   }
 }
