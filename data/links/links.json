@@ -31,7 +31,7 @@
   },
   "Substack": {
     "link": "https://substack.com/@staworth",
-    "img": "/image/links/substack.webp",
+    "img": "/images/links/substack.webp",
     "label": "Substack"
   },
   "Paragraph": {
@@ -46,7 +46,7 @@
   },
   "Dune": {
     "link": "https://dune.com/staworth",
-    "img": "images/links/dune.webp",
+    "img": "/images/links/dune.webp",
     "label": "Dune"
   },
   "Farcaster": {

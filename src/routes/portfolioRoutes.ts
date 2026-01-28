@@ -1,9 +1,10 @@
 import express from 'express';
-import { fetchPortfolio, updatePortfolio } from '../controllers/portfolio.js';
+import { fetchPortfolio, fetchHistoricPortfolio, updatePortfolio } from '../controllers/portfolio.js';
 
 const router = express.Router();
 
 router.get('/', fetchPortfolio);
+router.get('/historic', fetchHistoricPortfolio);
 router.get('/update', updatePortfolio);
 router.post('/update', updatePortfolio);
 

@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import { readPortfolioFromStore } from '../services/portfolio/portfolioStore.js';
+import { readPortfolioFromStore, readHistoricPortfolioFromStore } from '../services/portfolio/portfolioStore.js';
 import { updatePortfolio as runPortfolioUpdate } from '../services/portfolio/portfolioUpdater.js';
 
 const CRON_SECRET = process.env.CRON_SECRET;
@@ -30,5 +30,15 @@ export const updatePortfolio = async (req: Request, res: Response): Promise<void
   } catch (error) {
     console.error('Error updating portfolio:', error);
     res.status(500).json({ ok: false, error: (error as Error).message });
+  }
+};
+
+export const fetchHistoricPortfolio = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const historic = await readHistoricPortfolioFromStore();
+    res.json(historic);
+  } catch (error) {
+    console.error('Error fetching historic portfolio:', error);
+    res.status(500).json({ error: 'Failed to fetch historic portfolio' });
   }
 };

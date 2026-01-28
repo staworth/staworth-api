@@ -1,13 +1,13 @@
 import fs from 'fs';
 import path from 'path';
-import type { Portfolio, PortfolioItem } from '../../types/portfolio.js';
+import type { Portfolio, PortfolioItem, HistoricPortfolioEntry } from '../../types/portfolio.js';
 import { getTotalBifiBalance, getTotalBifiValue } from '../blockchain/bifi.js';
 import { getTotalGnoBalance, getTotalGnoValue } from '../blockchain/gno.js';
 import { getEthNxmBalance, getEthNxmValue, getStakedNxmBalance, getStakedNxmValue } from '../blockchain/nxm.js';
 import { getTotalxDaiBalance, getTotalxDaiValue } from '../blockchain/xdai.js';
 import { getBeefyPositions } from '../blockchain/beefyPositions.js';
 import { getAaveV3Positions } from '../blockchain/aavePositions.js';
-import { readPortfolioFromStore, writePortfolioToStore } from './portfolioStore.js';
+import { readPortfolioFromStore, writePortfolioToStore, readHistoricPortfolioFromStore, writeHistoricPortfolioToStore } from './portfolioStore.js';
 import { getAaveMetadata, getBeefyMetadata } from './portfolioMetadata.js';
 
 const ACCOUNTS_PATH = path.join(process.cwd(), 'data', 'accounts', 'accounts.json');
@@ -352,6 +352,48 @@ async function updateAaveV3Portfolio(portfolio: Portfolio): Promise<void> {
   }
 }
 
+/**
+ * Aggregate portfolio values by type (governance, defi, stablecoin)
+ */
+function aggregatePortfolioByType(portfolio: Portfolio): HistoricPortfolioEntry {
+  const aggregated: HistoricPortfolioEntry = { governance: 0, defi: 0, stablecoin: 0, total: 0 };
+  const validTypes = ['governance', 'defi', 'stablecoin'] as const;
+
+  for (const position of Object.values(portfolio.positions)) {
+    if (validTypes.includes(position.type as typeof validTypes[number])) {
+      const type = position.type as typeof validTypes[number];
+      aggregated[type] += position.value || 0;
+    }
+  }
+
+  // Round values to 2 decimal places
+  aggregated.governance = Math.round(aggregated.governance * 100) / 100;
+  aggregated.defi = Math.round(aggregated.defi * 100) / 100;
+  aggregated.stablecoin = Math.round(aggregated.stablecoin * 100) / 100;
+  aggregated.total = portfolio.total?.value || 0;
+
+  return aggregated;
+}
+
+/**
+ * Update historic portfolio with today's aggregated values
+ */
+async function updateHistoricPortfolio(portfolio: Portfolio): Promise<void> {
+  try {
+    const today = new Date().toISOString().split('T')[0]!; // "2026-01-28"
+    const historic = await readHistoricPortfolioFromStore();
+    const entry = aggregatePortfolioByType(portfolio);
+
+    historic[today] = entry;
+    await writeHistoricPortfolioToStore(historic);
+
+    console.log(`Historic portfolio updated for ${today}: governance=$${entry.governance}, defi=$${entry.defi}, stablecoin=$${entry.stablecoin}, total=$${entry.total}`);
+  } catch (error) {
+    console.error('Error updating historic portfolio:', error);
+    throw error;
+  }
+}
+
 async function updatePortfolio(): Promise<Portfolio> {
   const portfolio = await readPortfolio();
   
@@ -374,6 +416,9 @@ async function updatePortfolio(): Promise<Portfolio> {
   const totalValue = Object.values(portfolio.positions).reduce((sum, position) => sum + (position.value || 0), 0);
   portfolio.total = { value: Math.round(totalValue * 100) / 100 };
   await writePortfolio(portfolio);
+
+  // Update historic portfolio with today's aggregated values
+  await updateHistoricPortfolio(portfolio);
 
   return portfolio;
 }
