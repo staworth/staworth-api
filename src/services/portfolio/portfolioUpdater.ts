@@ -129,6 +129,7 @@ async function updateBifiPortfolio(portfolio: Portfolio): Promise<void> {
     portfolio.positions.bifi = {
       name: 'Beefy',
       type: 'governance',
+      exposure: 'governance',
       defi_protocol: null,
       url: 'https://beefy.com/',
       img: '/images/portfolio/bifi-token.webp',
@@ -160,6 +161,7 @@ async function updateGnoPortfolio(portfolio: Portfolio): Promise<void> {
     portfolio.positions.gno = {
       name: 'Gnosis',
       type: 'governance',
+      exposure: 'governance',
       defi_protocol: null,
       url: 'https://gnosis.io/',
       img: '/images/portfolio/gno-token.webp',
@@ -200,6 +202,7 @@ async function updateNxmPortfolio(portfolio: Portfolio): Promise<void> {
     portfolio.positions.nxm = {
       name: 'Nexus Mutual',
       type: 'governance',
+      exposure: 'governance',
       defi_protocol: null,
       url: 'https://nexusmutual.io/',
       img: '/images/portfolio/nxm-token.webp',
@@ -231,6 +234,7 @@ async function updateXDaiPortfolio(portfolio: Portfolio): Promise<void> {
     portfolio.positions.xdai = {
       name: 'xDAI',
       type: 'stablecoin',
+      exposure: 'usd stablecoins',
       defi_protocol: null,
       url: 'https://docs.gnosischain.com/about/tokens/xdai',
       img: '/images/portfolio/xdai-token.webp',
@@ -261,7 +265,8 @@ async function updateEthPortfolio(portfolio: Portfolio): Promise<void> {
 
     portfolio.positions.eth = {
       name: 'Ethereum',
-      type: 'governance',
+      type: 'native',
+      exposure: 'eth',
       defi_protocol: null,
       url: 'https://ethereum.org/',
       img: '/images/portfolio/weth-token.webp',
@@ -314,6 +319,7 @@ async function updateBeefyPositionsPortfolio(portfolio: Portfolio): Promise<void
       portfolio.positions[vaultName] = {
         name: metadata.name,
         type: 'defi',
+        exposure: metadata.exposure,
         defi_protocol: 'beefy',
         url: metadata.url,
         img: metadata.img,
@@ -370,6 +376,7 @@ async function updateAaveV3Portfolio(portfolio: Portfolio): Promise<void> {
       portfolio.positions[tokenName] = {
         name: metadata.name,
         type: 'defi',
+        exposure: metadata.exposure,
         defi_protocol: 'aave',
         url: metadata.url,
         img: metadata.img,
@@ -387,22 +394,60 @@ async function updateAaveV3Portfolio(portfolio: Portfolio): Promise<void> {
 /**
  * Aggregate portfolio values by type (governance, defi, stablecoin)
  */
-function aggregatePortfolioByType(portfolio: Portfolio): HistoricPortfolioEntry {
-  const aggregated: HistoricPortfolioEntry = { governance: 0, defi: 0, stablecoin: 0, total: 0 };
-  const validTypes = ['governance', 'defi', 'stablecoin'] as const;
+function aggregatePortfolio(portfolio: Portfolio): HistoricPortfolioEntry {
+  const aggregated: HistoricPortfolioEntry = {
+    total: 0,
+    type: {
+      governance: 0,
+      defi: 0,
+      stablecoin: 0,
+      native: 0,
+      other: 0,
+    },
+    exposure: {
+      eth: 0,
+      btc: 0,
+      governance: 0,
+      'usd stablecoins': 0,
+      other: 0,
+    },
+  };
+
+  const validTypes = ['governance', 'defi', 'stablecoin', 'native'] as const;
+  const validExposures = ['eth', 'btc', 'governance', 'usd stablecoins'] as const;
 
   for (const position of Object.values(portfolio.positions)) {
+    const value = position.value || 0;
+
     if (validTypes.includes(position.type as typeof validTypes[number])) {
       const type = position.type as typeof validTypes[number];
-      aggregated[type] += position.value || 0;
+      aggregated.type[type] += value;
+    } else {
+      aggregated.type.other += value;
+    }
+
+    if (validExposures.includes(position.exposure as typeof validExposures[number])) {
+      const exposure = position.exposure as typeof validExposures[number];
+      aggregated.exposure[exposure] += value;
+    } else {
+      aggregated.exposure.other += value;
     }
   }
 
-  // Round values to 2 decimal places
-  aggregated.governance = Math.round(aggregated.governance * 100) / 100;
-  aggregated.defi = Math.round(aggregated.defi * 100) / 100;
-  aggregated.stablecoin = Math.round(aggregated.stablecoin * 100) / 100;
   aggregated.total = portfolio.total?.value || 0;
+
+  // Round values to 2 decimal places
+  aggregated.type.governance = Math.round(aggregated.type.governance * 100) / 100;
+  aggregated.type.defi = Math.round(aggregated.type.defi * 100) / 100;
+  aggregated.type.stablecoin = Math.round(aggregated.type.stablecoin * 100) / 100;
+  aggregated.type.native = Math.round(aggregated.type.native * 100) / 100;
+  aggregated.type.other = Math.round(aggregated.type.other * 100) / 100;
+
+  aggregated.exposure.eth = Math.round(aggregated.exposure.eth * 100) / 100;
+  aggregated.exposure.btc = Math.round(aggregated.exposure.btc * 100) / 100;
+  aggregated.exposure.governance = Math.round(aggregated.exposure.governance * 100) / 100;
+  aggregated.exposure['usd stablecoins'] = Math.round(aggregated.exposure['usd stablecoins'] * 100) / 100;
+  aggregated.exposure.other = Math.round(aggregated.exposure.other * 100) / 100;
 
   return aggregated;
 }
@@ -414,12 +459,17 @@ async function updateHistoricPortfolio(portfolio: Portfolio): Promise<void> {
   try {
     const today = new Date().toISOString().split('T')[0]!; // "2026-01-28"
     const historic = await readHistoricPortfolioFromStore();
-    const entry = aggregatePortfolioByType(portfolio);
+    const entry = aggregatePortfolio(portfolio);
 
     historic[today] = entry;
     await writeHistoricPortfolioToStore(historic);
 
-    console.log(`Historic portfolio updated for ${today}: governance=$${entry.governance}, defi=$${entry.defi}, stablecoin=$${entry.stablecoin}, total=$${entry.total}`);
+    console.log(
+      `Historic portfolio updated for ${today}: ` +
+        `type(governance=$${entry.type.governance}, defi=$${entry.type.defi}, stablecoin=$${entry.type.stablecoin}, native=$${entry.type.native}, other=$${entry.type.other}), ` +
+        `exposure(eth=$${entry.exposure.eth}, btc=$${entry.exposure.btc}, governance=$${entry.exposure.governance}, usd stablecoins=$${entry.exposure['usd stablecoins']}, other=$${entry.exposure.other}), ` +
+        `total=$${entry.total}`
+    );
   } catch (error) {
     console.error('Error updating historic portfolio:', error);
     throw error;

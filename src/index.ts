@@ -31,6 +31,8 @@ app.get('/', (req: Request, res: Response) => {
       'GET /links': "Staworth's important links.",
       'GET /portfolio': "Staworth's portfolio holdings.",
       'GET /portfolio/historic': "Historic daily portfolio values by category.",
+      'GET /portfolio/historic/type': "Historic daily portfolio values by type.",
+      'GET /portfolio/historic/exposure': "Historic daily portfolio values by exposure.",
       'GET/POST /portfolio/update': "Trigger portfolio update (requires x-cron-secret header).",
       'GET /beefy/balance-sheet': "Beefy DAO's balance sheet.",
       'GET /beefy/balance-sheet/historic': "Historic balance sheets for Beefy DAO.",
@@ -64,6 +66,8 @@ app.listen(PORT, () => {
   console.log(`  • GET  /links                                   - Staworth's important links`);
   console.log(`  • GET  /portfolio                               - Staworth's portfolio holdings`);
   console.log(`  • GET  /portfolio/historic                      - Historic daily portfolio values by category`);
+  console.log(`  • GET  /portfolio/historic/type                 - Historic daily portfolio values by type`);
+  console.log(`  • GET  /portfolio/historic/exposure             - Historic daily portfolio values by exposure`);
   console.log(`  • GET/POST /portfolio/update                    - Trigger portfolio update (requires x-cron-secret header)`);
   console.log(`  • GET  /beefy/balance-sheet                     - Beefy DAO's balance sheet`);
   console.log(`  • GET  /beefy/balance-sheet/historic            - Historic balance sheets for Beefy DAO`);

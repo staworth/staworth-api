@@ -42,3 +42,33 @@ export const fetchHistoricPortfolio = async (req: Request, res: Response): Promi
     res.status(500).json({ error: 'Failed to fetch historic portfolio' });
   }
 };
+
+export const fetchHistoricPortfolioType = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const historic = await readHistoricPortfolioFromStore();
+    const typeOnly = Object.fromEntries(
+      Object.entries(historic)
+        .filter(([_, entry]) => typeof entry === 'object' && entry !== null && 'type' in entry)
+        .map(([date, entry]) => [date, (entry as { type: unknown }).type])
+    );
+    res.json(typeOnly);
+  } catch (error) {
+    console.error('Error fetching historic portfolio type:', error);
+    res.status(500).json({ error: 'Failed to fetch historic portfolio type' });
+  }
+};
+
+export const fetchHistoricPortfolioExposure = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const historic = await readHistoricPortfolioFromStore();
+    const exposureOnly = Object.fromEntries(
+      Object.entries(historic)
+        .filter(([_, entry]) => typeof entry === 'object' && entry !== null && 'exposure' in entry)
+        .map(([date, entry]) => [date, (entry as { exposure: unknown }).exposure])
+    );
+    res.json(exposureOnly);
+  } catch (error) {
+    console.error('Error fetching historic portfolio exposure:', error);
+    res.status(500).json({ error: 'Failed to fetch historic portfolio exposure' });
+  }
+};
