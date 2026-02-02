@@ -14,6 +14,11 @@ const AAVE_METADATA: Record<string, PositionMetadata> = {
     url: 'https://app.aave.com/reserve-overview/?underlyingAsset=0x1f32b1c2345538c0c6f582fcb022739c4a194ebb&marketName=proto_optimism_v3',
     img: '/images/portfolio/wsteth-token.webp',
   },
+  aOptWbtc: {
+    name: 'Aave OP wBTC',
+    url: 'https://app.aave.com/reserve-overview/?underlyingAsset=0x68f180fcce6836688e9084f035309e29bf0a2095&marketName=proto_optimism_v3',
+    img: '/images/portfolio/wbtc-token.webp',
+  },
   aGnowstEth: {
     name: 'Aave Gnosis wstETH',
     url: 'https://app.aave.com/reserve-overview/?underlyingAsset=0x6c76971f98945ae98dd7d4dfca8711ebea946ea6&marketName=proto_gnosis_v3',
@@ -29,10 +34,20 @@ const AAVE_METADATA: Record<string, PositionMetadata> = {
     url: 'https://app.aave.com/reserve-overview/?underlyingAsset=0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf&marketName=proto_base_v3',
     img: '/images/portfolio/cbbtc-token.webp',
   },
-  aOptWbtc: {
-    name: 'Aave OP wBTC',
-    url: 'https://app.aave.com/reserve-overview/?underlyingAsset=0x68f180fcce6836688e9084f035309e29bf0a2095&marketName=proto_optimism_v3',
-    img: '/images/portfolio/wbtc-token.webp',
+  aBaseWeEth: {
+    name: 'Aave Base weETH',
+    url: 'https://app.aave.com/reserve-overview/?underlyingAsset=0x04c0599ae5a44757c0af6f9ec3b93da8976c150a&marketName=proto_base_v3',
+    img: '/images/portfolio/weth-token.webp',
+  },  
+  aBaseWrsEth: {
+    name: 'Aave Base wrsETH',
+    url: 'https://app.aave.com/reserve-overview/?underlyingAsset=0xedfa23602d0ec14714057867a78d01e94176bea0&marketName=proto_base_v3',
+    img: '/images/portfolio/wrseth-token.webp',
+  },
+  aBaseEzEth: {
+    name: 'Aave Base ezETH',
+    url: 'https://app.aave.com/reserve-overview/?underlyingAsset=0x2416092f143378750bb29b79ed961ab195cceea5&marketName=proto_base_v3',
+    img: '/images/portfolio/ezeth-token.webp',
   },
 };
 

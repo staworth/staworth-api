@@ -13,7 +13,8 @@
     "test:gno": "vitest src/services/blockchain/gno.test.ts",
     "test:nxm": "vitest src/services/blockchain/nxm.test.ts",
     "test:aave": "vitest src/services/blockchain/aavePositions.test.ts",
-    "test:xdai": "vitest src/services/blockchain/xdai.test.ts"
+    "test:xdai": "vitest src/services/blockchain/xdai.test.ts",
+    "test:eth": "vitest src/services/blockchain/eth.test.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",

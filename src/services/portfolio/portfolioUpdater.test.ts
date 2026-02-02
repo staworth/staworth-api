@@ -13,6 +13,7 @@ describe('Portfolio Updater', () => {
             expect(portfolio.positions.gno).toBeDefined();
             expect(portfolio.positions.nxm).toBeDefined();
             expect(portfolio.positions.xdai).toBeDefined();
+            expect(portfolio.positions.eth).toBeDefined();
             expect(portfolio.total).toBeDefined();
 
             // Check balance and value fields exist
@@ -24,6 +25,8 @@ describe('Portfolio Updater', () => {
             expect(portfolio.positions.nxm!.value).toBeDefined();
             expect(portfolio.positions.xdai!.balance).toBeDefined();
             expect(portfolio.positions.xdai!.value).toBeDefined();
+            expect(portfolio.positions.eth!.balance).toBeDefined();
+            expect(portfolio.positions.eth!.value).toBeDefined();
             expect(portfolio.total!.value).toBeDefined();
             
             // Check types are numbers
@@ -35,6 +38,8 @@ describe('Portfolio Updater', () => {
             expect(typeof portfolio.positions.nxm!.value).toBe('number');
             expect(typeof portfolio.positions.xdai!.balance).toBe('number');
             expect(typeof portfolio.positions.xdai!.value).toBe('number');
+            expect(typeof portfolio.positions.eth!.balance).toBe('number');
+            expect(typeof portfolio.positions.eth!.value).toBe('number');
             expect(typeof portfolio.total!.value).toBe('number');
             
             // Check values are non-negative
@@ -46,6 +51,8 @@ describe('Portfolio Updater', () => {
             expect(portfolio.positions.nxm!.value).toBeGreaterThanOrEqual(0);
             expect(portfolio.positions.xdai!.balance).toBeGreaterThanOrEqual(0);
             expect(portfolio.positions.xdai!.value).toBeGreaterThanOrEqual(0);
+            expect(portfolio.positions.eth!.balance).toBeGreaterThanOrEqual(0);
+            expect(portfolio.positions.eth!.value).toBeGreaterThanOrEqual(0);
             expect(portfolio.total!.value).toBeGreaterThanOrEqual(0);
             
             // Check values are finite numbers
@@ -57,6 +64,8 @@ describe('Portfolio Updater', () => {
             expect(Number.isFinite(portfolio.positions.nxm!.value)).toBe(true);
             expect(Number.isFinite(portfolio.positions.xdai!.balance)).toBe(true);
             expect(Number.isFinite(portfolio.positions.xdai!.value)).toBe(true);
+            expect(Number.isFinite(portfolio.positions.eth!.balance)).toBe(true);
+            expect(Number.isFinite(portfolio.positions.eth!.value)).toBe(true);
             expect(Number.isFinite(portfolio.total!.value)).toBe(true);
         }, 60000); // 60 second timeout for API calls and file I/O
     });

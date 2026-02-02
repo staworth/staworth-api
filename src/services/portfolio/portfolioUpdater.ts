@@ -5,6 +5,7 @@ import { getTotalBifiBalance, getTotalBifiValue } from '../blockchain/bifi.js';
 import { getTotalGnoBalance, getTotalGnoValue } from '../blockchain/gno.js';
 import { getEthNxmBalance, getEthNxmValue, getStakedNxmBalance, getStakedNxmValue } from '../blockchain/nxm.js';
 import { getTotalxDaiBalance, getTotalxDaiValue } from '../blockchain/xdai.js';
+import { getTotalEthBalance, getTotalEthValue } from '../blockchain/eth.js';
 import { getBeefyPositions } from '../blockchain/beefyPositions.js';
 import { getAaveV3Positions } from '../blockchain/aavePositions.js';
 import { readPortfolioFromStore, writePortfolioToStore, readHistoricPortfolioFromStore, writeHistoricPortfolioToStore } from './portfolioStore.js';
@@ -245,6 +246,37 @@ async function updateXDaiPortfolio(portfolio: Portfolio): Promise<void> {
 }
 
 /**
+ * Update ETH portfolio with latest balance and value
+ */
+async function updateEthPortfolio(portfolio: Portfolio): Promise<void> {
+  try {
+    console.log('Updating ETH portfolio for all wallets');
+
+    const wallets = readAccountAddresses();
+    const balances = await Promise.all(wallets.map((address) => getTotalEthBalance(address)));
+    const values = await Promise.all(wallets.map((address) => getTotalEthValue(address)));
+
+    const balanceTotal = Math.round(balances.reduce((sum, b) => sum + b, 0) * 1000) / 1000;
+    const valueTotal = Math.round(values.reduce((sum, v) => sum + v, 0) * 100) / 100;
+
+    portfolio.positions.eth = {
+      name: 'Ethereum',
+      type: 'governance',
+      defi_protocol: null,
+      url: 'https://ethereum.org/',
+      img: '/images/portfolio/weth-token.webp',
+      balance: balanceTotal,
+      value: valueTotal,
+    };
+
+    console.log(`ETH balance: ${portfolio.positions.eth!.balance}, value: $${portfolio.positions.eth!.value}`);
+  } catch (error) {
+    console.error('Error updating ETH portfolio:', error);
+    throw error;
+  }
+}
+
+/**
  * Update Beefy positions portfolio
  */
 async function updateBeefyPositionsPortfolio(portfolio: Portfolio): Promise<void> {
@@ -407,6 +439,7 @@ async function updatePortfolio(): Promise<Portfolio> {
     updateGnoPortfolio(portfolio),
     updateNxmPortfolio(portfolio),
     updateXDaiPortfolio(portfolio),
+    updateEthPortfolio(portfolio),
     updateBeefyPositionsPortfolio(portfolio),
     updateAaveV3Portfolio(portfolio),
   ];
@@ -423,4 +456,4 @@ async function updatePortfolio(): Promise<Portfolio> {
   return portfolio;
 }
 
-export { updatePortfolio, updateBifiPortfolio, updateGnoPortfolio, updateNxmPortfolio, updateXDaiPortfolio, updateBeefyPositionsPortfolio, updateAaveV3Portfolio, readPortfolio, writePortfolio };
+export { updatePortfolio, updateBifiPortfolio, updateGnoPortfolio, updateNxmPortfolio, updateXDaiPortfolio, updateEthPortfolio, updateBeefyPositionsPortfolio, updateAaveV3Portfolio, readPortfolio, writePortfolio };
