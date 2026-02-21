@@ -36,6 +36,7 @@ Runs the test suite using Vitest, including blockchain integration and portfolio
 |--------|----------|-------------|
 | GET | `/` | API information and available endpoints |
 | GET | `/health` | Health check - returns server status |
+| GET | `/openapi.json` | OpenAPI 3.0 specification (for Swagger/Redoc/tooling import) |
 | GET | `/accounts` | Summary of Staworth's onchain accounts |
 | GET | `/articles` | Staworth's published articles |
 | GET | `/links` | Staworth's important links |
@@ -47,6 +48,20 @@ Runs the test suite using Vitest, including blockchain integration and portfolio
 | GET | `/beefy/income-statement/quarter` | Beefy DAO's most-recent quarterly income statement |
 | GET | `/beefy/income-statement/annual/historic` | Historic annual income statements for Beefy DAO |
 | GET | `/beefy/income-statement/quarter/historic` | Historic quarterly income statements for Beefy DAO |
+
+## OpenAPI Integration
+
+This API now exposes an OpenAPI 3.0 specification at:
+
+```text
+GET /openapi.json
+```
+
+For external documentation platforms, use your deployed OpenAPI URL, for example:
+
+```text
+https://your-api-domain.example/openapi.json
+```
 
 ## Features
 

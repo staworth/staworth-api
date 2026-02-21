@@ -8,6 +8,7 @@ import linksRoutes from './routes/linksRoutes.js';
 import portfolioRoutes from './routes/portfolioRoutes.js';
 import balanceSheetRoutes from './routes/balanceSheetRoutes.js';
 import incomeStatementRoutes from './routes/incomeStatementRoutes.js';
+import { openApiSpec } from './openapi.js';
 
 dotenv.config({ quiet: true });
 
@@ -26,6 +27,7 @@ app.get('/', (req: Request, res: Response) => {
     status: 'ok',
     endpoints: {
       'GET /health': 'Health check.',
+      'GET /openapi.json': 'OpenAPI 3.0 specification.',
       'GET /accounts': "Summary of Staworth's onchain accounts.",
       'GET /articles': "Staworth's published articles.",
       'GET /links': "Staworth's important links.",
@@ -48,6 +50,10 @@ app.get('/health', (req: Request, res: Response) => {
   res.json({ status: 'ok', message: 'Server is running' });
 });
 
+app.get('/openapi.json', (req: Request, res: Response) => {
+  res.json(openApiSpec);
+});
+
 // API routes
 app.use('/accounts', accountsRoutes);
 app.use('/articles', articlesRoutes);
@@ -61,6 +67,7 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log(`\nEndpoints:`);
   console.log(`  • GET  /health                                  - Health check`);
+  console.log(`  • GET  /openapi.json                            - OpenAPI 3.0 specification`);
   console.log(`  • GET  /accounts                                - Summary of Staworth's onchain accounts`);
   console.log(`  • GET  /articles                                - Staworth's published articles`);
   console.log(`  • GET  /links                                   - Staworth's important links`);
