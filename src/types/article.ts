@@ -3,6 +3,7 @@ export interface Article {
   title: string;
   date: string;
   category: string;
+  categories?: string[];
   description: string;
   image: string;
 }

@@ -1,4 +1,13 @@
 {
+  "Game Changer: Goldbot Sachs by QiDao": {
+    "link": "https://beefy.com/articles/goldbot/",
+    "title": "Game Changer: Goldbot Sachs by QiDao",
+    "date": "6 March 2026",
+    "category": "BEEFY",
+    "categories": ["BEEFY", "QIDAO"],
+    "description": "Discover Goldbot Sachs by QiDao, an AI agent skill that deploys idle stablecoins into Beefy vaults for yield, powered by agentic DeFi infrastructure and Beefy CLI.",
+    "image": "/images/articles/goldbot.webp"
+  },
   "The Scars Of Battle": {
     "link": "https://beefy.com/articles/risk-checklist/",
     "title": "The Scars Of Battle",

@@ -474,18 +474,22 @@ export const openApiSpec = {
         },
         required: ['address', 'ens', 'chains', 'created']
       },
-      Article: {
-        type: 'object',
-        properties: {
-          link: { type: 'string' },
-          title: { type: 'string' },
-          date: { type: 'string' },
-          category: { type: 'string' },
-          description: { type: 'string' },
-          image: { type: 'string' }
+        Article: {
+          type: 'object',
+          properties: {
+            link: { type: 'string' },
+            title: { type: 'string' },
+            date: { type: 'string' },
+            category: { type: 'string' },
+            categories: {
+              type: 'array',
+              items: { type: 'string' }
+            },
+            description: { type: 'string' },
+            image: { type: 'string' }
+          },
+          required: ['link', 'title', 'date', 'category', 'description', 'image']
         },
-        required: ['link', 'title', 'date', 'category', 'description', 'image']
-      },
       Link: {
         type: 'object',
         properties: {
