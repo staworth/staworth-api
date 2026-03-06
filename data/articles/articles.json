@@ -3,7 +3,6 @@
     "link": "https://beefy.com/articles/goldbot/",
     "title": "Game Changer: Goldbot Sachs by QiDao",
     "date": "6 March 2026",
-    "category": "BEEFY",
     "categories": ["BEEFY", "QIDAO"],
     "description": "Discover Goldbot Sachs by QiDao, an AI agent skill that deploys idle stablecoins into Beefy vaults for yield, powered by agentic DeFi infrastructure and Beefy CLI.",
     "image": "/images/articles/goldbot.webp"
@@ -12,7 +11,7 @@
     "link": "https://beefy.com/articles/risk-checklist/",
     "title": "The Scars Of Battle",
     "date": "23 December 2025",
-    "category": "BEEFY",
+    "categories": ["BEEFY"],
     "description": "Reflections on recent shockwaves in DeFi and the changes Beefy is implementing to better protect its users.",
     "image": "/images/articles/beefy-risk-checklist.webp"
   },
@@ -20,7 +19,7 @@
     "link": "https://kpk.io/permissions-layer/",
     "title": "Security In The Permissions Layer",
     "date": "17 October 2025",
-    "category": "KPK",
+    "categories": ["KPK"],
     "description": "The Permissions Layer safeguards against collusion with granular on-chain controls forming the stack’s foundation.",
     "image": "/images/articles/kpk-permission-layer.webp"
   },
@@ -28,7 +27,7 @@
     "link": "https://kpk.io/beyond-the-boundaries/",
     "title": "Beyond The Boundaries",
     "date": "11 September 2025",
-    "category": "KPK",
+    "categories": ["KPK"],
     "description": "The 21Shares dYdX ETP connects institutions and retail investors to DeFi through a regulated exchange-listed product.",
     "image": "/images/articles/kpk-beyond-the-boundaries.webp"
   },
@@ -36,7 +35,7 @@
     "link": "https://kpk.io/ethereum-foundation-treasury-policy/",
     "title": "The Ethereum Foundation's Treasury Policy",
     "date": "17 June 2025",
-    "category": "KPK",
+    "categories": ["KPK"],
     "description": "kpk helped the Ethereum Foundation craft a values-aligned Treasury Policy that set a new standard in DeFi deployment.",
     "image": "/images/articles/kpk-ef-case-study.webp"
   },
@@ -44,7 +43,7 @@
     "link": "https://beefy.com/articles/bes/",
     "title": "No Word Of A Lie",
     "date": "7 April 2025",
-    "category": "BEEFY",
+    "categories": ["BEEFY"],
     "description": "Introducing the latest member of the beToken family: Beefy-escrowed Sonic!",
     "image": "/images/articles/bes.webp"
   },
@@ -52,7 +51,7 @@
     "link": "https://kpk.io/karpatkey-the-story-so-far/",
     "title": "The Story So Far...",
     "date": "11 March 2025",
-    "category": "KPK",
+    "categories": ["KPK"],
     "description": "This article highlights karpatkey’s history and frames 2025 as a transformative year with new opportunities.",
     "image": "/images/articles/kpk-story-so-far.webp"
   },
@@ -60,7 +59,7 @@
     "link": "https://jumpshare.com/v/HsrooB9Um0JPFZ2TZ4uA",
     "title": "Beefy Annual Report 2024",
     "date": "17 March 2025",
-    "category": "BEEFY",
+    "categories": ["BEEFY"],
     "description": "Explore Beefy's full reporting on the project and DAO's financial performance throughout 2024.",
     "image": "/images/articles/beefy-annual-report-2024.webp"
   },
@@ -68,7 +67,7 @@
     "link": "https://kpk.io/securing-alignment-with-hypernative/",
     "title": "Securing Alignment With Hypernative",
     "date": "28 November 2024",
-    "category": "KPK",
+    "categories": ["KPK"],
     "description": "kpk’s partnership with Hypernative through a token-for-equity swap sets a new benchmark for DeFi security and investment.",
     "image": "/images/articles/kpk-securing-alignment.webp"
   },
@@ -76,7 +75,7 @@
     "link": "https://paragraph.com/@jackgale/beefy-s-profitability-problem",
     "title": "Beefy's Profitability Problem",
     "date": "21 August 2024",
-    "category": "BEEFY",
+    "categories": ["BEEFY"],
     "description": "Treatise on the right approach to reinvesting profits in the Beefy DAO, accompanying proposals for a new profit distribution framework and incentives scheme.",
     "image": "/images/articles/grey-shapes-15.webp"
   },
@@ -84,7 +83,7 @@
     "link": "https://beefy.com/articles/ltipp/",
     "title": "Training Wheels Off - Unleashing CLM with LTIPP on Arbitrum",
     "date": "12 June 2024",
-    "category": "BEEFY",
+    "categories": ["BEEFY"],
     "description": "Dive into the full launch of the new Cowcentrated Liquidity Manager (CLM), and Beefy's Long Term Incentives Pilot Program campaign taking place on Arbitrum this summer.",
     "image": "/images/articles/beefy-ltipp.webp"
   },
@@ -92,7 +91,7 @@
     "link": "https://paragraph.com/@staworth/introducing-staworth",
     "title": "Introducing: Staworth",
     "date": "31 May 2024",
-    "category": "STAWORTH",
+    "categories": ["STAWORTH"],
     "description": "A brief introduction to Staworth Limited - 'staunch advocacy for digital communities'. Read about the principles we're built on and our journey through to launch.",
     "image": "/logos/Staworth_16_9_Black.webp"
   },
@@ -100,7 +99,7 @@
     "link": "https://beefy.com/articles/fraxtal/",
     "title": "Recursive Returns with Beefy on Fraxtal",
     "date": "4 April 2024",
-    "category": "BEEFY",
+    "categories": ["BEEFY"],
     "description": "Celebrating the launch of Beefy on its 26th blockchain - Fraxtal. A deep exploration of the new ecosystem and the philosophy underlying Frax's plans for a future DeFi paradise.",
     "image": "/images/articles/fraxtal.webp"
   },
@@ -108,7 +107,7 @@
     "link": "https://jumpshare.com/v/OMlUmrQSYknnpOC7b14c",
     "title": "Beefy Annual Report 2023",
     "date": "20 February 2024",
-    "category": "BEEFY",
+    "categories": ["BEEFY"],
     "description": "Concluding the first year of financial reporting for Beefy DAO, the 2023 report highlights the DAO's activities and financial performance over the last 12 months.",
     "image": "/images/articles/beefy-annual-report-2023.webp"
   },
@@ -116,7 +115,7 @@
     "link": "https://paragraph.com/@jackgale/karpatkey-dao-strategic-significance",
     "title": "Karpatkey DAO: Strategic Significance",
     "date": "16 February 2024",
-    "category": "KPK",
+    "categories": ["KPK"],
     "description": "Exploring the launch of Karpatkey DAO, the next chapter for one of the largest Web 3.0 treasury and risk management providers, and reasons for choosing to launch as a DAO in 2024.",
     "image": "/images/articles/grey-shapes-1.webp"
   },
@@ -124,7 +123,7 @@
     "link": "https://beefy.com/articles/zap-v3/",
     "title": "The Next Level: ZAP V3 with Beefy × Optimism × KyberSwap",
     "date": "4 December 2023",
-    "category": "BEEFY",
+    "categories": ["BEEFY"],
     "description": "Delivering the next generation of accessibility tooling, in tandem with the largest launch campaign we've ever done.",
     "image": "/images/articles/zap-v3.webp"
   },
@@ -132,7 +131,7 @@
     "link": "https://beefy.com/articles/lz-aura/",
     "title": "The Next Generation: Crosschain Yield Optimization with Beefy x LayerZero x Aura",
     "date": "13 September 2023",
-    "category": "BEEFY",
+    "categories": ["BEEFY"],
     "description": "Announcing a paradigm shift in Beefy's product lineup, with the introduction of LayerZero crosschain strategies in partnership with Aura Finance.",
     "image": "/images/articles/lz-aura.webp"
   },
@@ -140,7 +139,7 @@
     "link": "https://beefy.com/articles/beefy-cl/",
     "title": "Creative Destruction, Concentrated Liquidity and Beefy's Next Generation",
     "date": "30 June 2023",
-    "category": "BEEFY",
+    "categories": ["BEEFY"],
     "description": "Concentrated liquidity has arrived on Beefy, meaning higher yields and more efficient liquidity than ever before. Learn all about our latest vaults built with Gamma and Algebra.",
     "image": "/images/articles/beefy-cl.webp"
   },
@@ -148,7 +147,7 @@
     "link": "https://beefy.com/articles/safeguarding-in-plain-sight-the-beefy-timelock-monitor/",
     "title": "Safeguarding in Plain Sight: The Beefy Timelock Monitor",
     "date": "7 March 2023",
-    "category": "BEEFY",
+    "categories": ["BEEFY"],
     "description": "Discover the secrets of Beefy's risk management efforts for yourself with our latest public information feed.",
     "image": "/images/articles/timelock-monitor.webp"
   }

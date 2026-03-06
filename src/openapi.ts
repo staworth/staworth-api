@@ -480,7 +480,6 @@ export const openApiSpec = {
             link: { type: 'string' },
             title: { type: 'string' },
             date: { type: 'string' },
-            category: { type: 'string' },
             categories: {
               type: 'array',
               items: { type: 'string' }
@@ -488,7 +487,7 @@ export const openApiSpec = {
             description: { type: 'string' },
             image: { type: 'string' }
           },
-          required: ['link', 'title', 'date', 'category', 'description', 'image']
+          required: ['link', 'title', 'date', 'categories', 'description', 'image']
         },
       Link: {
         type: 'object',
