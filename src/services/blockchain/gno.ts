@@ -93,7 +93,7 @@ async function getOsGnoGnoBalance( walletAddress: string ): Promise<number> {
 async function getOsGnoPrice(): Promise<number> {
     const gnoPrice = await getGnoPrice();
     const ppfs = await getOsGnoPpfs();
-    const osGnoPrice = Math.round((gnoPrice / ppfs) * 100) / 100;
+    const osGnoPrice = Math.round((gnoPrice * ppfs) * 100) / 100;
     return osGnoPrice;
 }
 
