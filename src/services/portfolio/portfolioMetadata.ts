@@ -73,6 +73,18 @@ const BEEFY_METADATA: Record<string, PositionMetadata> = {
     url: 'https://app.beefy.com/vault/curve-op-crvusd-usdt',
     img: '/images/portfolio/bifi-token.webp',
   },
+  'aerodrome-usdc-mai': {
+    name: 'Beefy Base Aerodrome USDC-MAI',
+    exposure: 'usd stablecoins',
+    url: 'https://app.beefy.com/vault/aerodrome-usdc-mai',
+    img: '/images/portfolio/bifi-token.webp',
+  },
+  'aerodrome-usdc-eusd': {
+    name: 'Beefy Base Aerodrome USDC-eUSD',
+    exposure: 'usd stablecoins',
+    url: 'https://app.beefy.com/vault/aerodrome-usdc-eusd',
+    img: '/images/portfolio/bifi-token.webp',
+  },
 };
 
 export function getAaveMetadata(tokenName: string): PositionMetadata {

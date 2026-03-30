@@ -7,6 +7,11 @@ const typedContracts = contracts as unknown as Contracts;
 const ethMooBifi = typedContracts.ethmooBIFI!;
 const opMooBifi = typedContracts.opmooBIFI!;
 const opBifiEthLp = typedContracts.opBifiEthLp!;
+const baseMooBifi = {
+  ...opMooBifi,
+  chain: 'base',
+  address: '0xc55e93c62874d8100dbd2dfe307edc1036ad5434',
+};
 
 interface PpfsResponse {
   priceRows: Array<{
@@ -105,6 +110,37 @@ async function getOpMooBifiBifiBalance( walletAddress: string ): Promise<number>
     return bifiBalance;
 }
 
+// Base mooBIFI Functions
+
+async function getBaseMooBifiBalance( walletAddress: string ): Promise<bigint> {
+  const web3 = getWeb3(baseMooBifi.chain);
+  if (!baseMooBifi?.abi || !baseMooBifi?.address) {
+    throw new Error('Error: baseMooBifi contract ABI or address is missing');
+  }
+  const baseMooBifiContract = new web3.eth.Contract(baseMooBifi.abi, baseMooBifi.address);
+  const balanceRaw = await (baseMooBifiContract.methods.balanceOf as any)(walletAddress).call() as string;
+  return BigInt(balanceRaw);
+}
+
+async function getBaseMooBifiValue( walletAddress: string ): Promise<number> {
+  const balance = await getBaseMooBifiBalance( walletAddress );
+  if (balance === 0n) {
+    return 0;
+  }
+  const price = await getMooBifiPrice();
+  const value = Math.round(((Number(balance) / 1e18) * price) * 100) / 100;
+  return value;
+}
+
+// Base mooBIFI (Underlying BIFI) Functions
+
+async function getBaseMooBifiBifiBalance( walletAddress: string ): Promise<number> {
+  const mooBifiBalance = await getBaseMooBifiBalance( walletAddress );
+  const ppfs = await getMooBifiPpfs();
+  const bifiBalance = Math.round(((Number(mooBifiBalance) / 1e18) * ppfs) * 1000) / 1000;
+  return bifiBalance;
+}
+
 
 // OP BIFI-ETH LP Functions
 
@@ -167,16 +203,18 @@ async function getOpBifiEthLpBifiBalance( walletAddress: string ): Promise<numbe
 async function getTotalBifiBalance( walletAddress: string ): Promise<number> {
     const ethMooBifiBifiBalance = await getEthMooBifiBifiBalance( walletAddress );
     const opMooBifiBifiBalance = await getOpMooBifiBifiBalance( walletAddress );
+    const baseMooBifiBifiBalance = await getBaseMooBifiBifiBalance( walletAddress );
     const opBifiEthLpBifiBalance = await getOpBifiEthLpBifiBalance( walletAddress );
-    const totalBifiBalance = Math.round((ethMooBifiBifiBalance + opMooBifiBifiBalance + opBifiEthLpBifiBalance) * 1000) / 1000;
+    const totalBifiBalance = Math.round((ethMooBifiBifiBalance + opMooBifiBifiBalance + baseMooBifiBifiBalance + opBifiEthLpBifiBalance) * 1000) / 1000;
     return totalBifiBalance;
 }
 
 async function getTotalBifiValue( walletAddress: string ): Promise<number> {
     const ethMooBifiValue = await getEthMooBifiValue( walletAddress );
     const opMooBifiValue = await getOpMooBifiValue( walletAddress );
+    const baseMooBifiValue = await getBaseMooBifiValue( walletAddress );
     const opBifiEthLpValue = await getOpBifiEthLpValue( walletAddress );
-    const totalValue = Math.round((ethMooBifiValue + opMooBifiValue + opBifiEthLpValue) * 100) / 100;
+    const totalValue = Math.round((ethMooBifiValue + opMooBifiValue + baseMooBifiValue + opBifiEthLpValue) * 100) / 100;
     return totalValue;
 }
 
@@ -185,6 +223,8 @@ export {
   getEthMooBifiValue,
   getOpMooBifiBifiBalance,
   getOpMooBifiValue,
+  getBaseMooBifiBifiBalance,
+  getBaseMooBifiValue,
   getOpBifiEthLpBifiBalance,
   getOpBifiEthLpValue,
   getTotalBifiBalance,

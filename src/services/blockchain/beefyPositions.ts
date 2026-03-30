@@ -68,7 +68,7 @@ async function getBeefyPositions(walletAddress: string ): Promise<BeefyPositions
         if (entry.underlying_balance === 0 || entry.usd_balance === 0) {
             continue;
         }
-        if (displayName === 'optimism-bridged-bifi-vault') {
+        if (displayName === 'optimism-bridged-bifi-vault' || displayName === 'base-bridged-bifi-vault') {
             continue;
         }
         

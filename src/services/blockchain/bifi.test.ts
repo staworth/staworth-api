@@ -4,6 +4,8 @@ import {
     getEthMooBifiValue,
     getOpMooBifiBifiBalance,
     getOpMooBifiValue,
+    getBaseMooBifiBifiBalance,
+    getBaseMooBifiValue,
     getOpBifiEthLpBifiBalance,
     getOpBifiEthLpValue,
     getTotalBifiBalance,
@@ -55,6 +57,30 @@ describe('BIFI Service', () => {
             const value = await getOpMooBifiValue(walletAddress);
             console.log('OP mooBIFI Value:', value);
             
+            expect(value).toBeDefined();
+            expect(typeof value).toBe('number');
+            expect(value).toBeGreaterThanOrEqual(0);
+            expect(Number.isFinite(value)).toBe(true);
+        }, 30000); // 30 second timeout for API calls
+    });
+
+    describe('getBaseMooBifiBifiBalance', () => {
+        it('should return a valid number for underlying BIFI balance on Base', async () => {
+            const balance = await getBaseMooBifiBifiBalance(walletAddress);
+            console.log('Base mooBIFI BIFI Balance:', balance);
+
+            expect(balance).toBeDefined();
+            expect(typeof balance).toBe('number');
+            expect(balance).toBeGreaterThanOrEqual(0);
+            expect(Number.isFinite(balance)).toBe(true);
+        }, 30000);
+    });
+
+    describe('getBaseMooBifiValue', () => {
+        it('should return a valid number for Base mooBIFI value', async () => {
+            const value = await getBaseMooBifiValue(walletAddress);
+            console.log('Base mooBIFI Value:', value);
+
             expect(value).toBeDefined();
             expect(typeof value).toBe('number');
             expect(value).toBeGreaterThanOrEqual(0);
