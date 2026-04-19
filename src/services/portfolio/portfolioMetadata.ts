@@ -87,6 +87,33 @@ const BEEFY_METADATA: Record<string, PositionMetadata> = {
   },
 };
 
+const BASE_ASSET_METADATA: Record<string, PositionMetadata> = {
+  baseCbEth: {
+    name: 'Base cbETH',
+    exposure: 'eth',
+    url: 'https://www.coinbase.com/cbeth',
+    img: '/images/portfolio/cbeth-token.webp',
+  },
+  baseCbBtc: {
+    name: 'Base cbBTC',
+    exposure: 'btc',
+    url: 'https://www.coinbase.com/cbbtc',
+    img: '/images/portfolio/cbbtc-token.webp',
+  },
+  baseEzEth: {
+    name: 'Base ezETH',
+    exposure: 'eth',
+    url: 'https://docs.renzoprotocol.com/docs/products/restaking/ezeth',
+    img: '/images/portfolio/ezeth-token.webp',
+  },
+  baseWeEth: {
+    name: 'Base weETH',
+    exposure: 'eth',
+    url: 'https://help.ether.fi/en/articles/595737-weeth',
+    img: '/images/portfolio/weeth-token.webp',
+  },
+};
+
 export function getAaveMetadata(tokenName: string): PositionMetadata {
   return AAVE_METADATA[tokenName] || {
     name: `Aave ${tokenName}`,
@@ -102,5 +129,14 @@ export function getBeefyMetadata(vaultName: string): PositionMetadata {
     exposure: '',
     url: `https://app.beefy.com/vault/${vaultName}`,
     img: '/images/portfolio/bifi-token.webp',
+  };
+}
+
+export function getBaseAssetMetadata(tokenName: string): PositionMetadata {
+  return BASE_ASSET_METADATA[tokenName] || {
+    name: `Base ${tokenName}`,
+    exposure: '',
+    url: 'https://basescan.org/',
+    img: '/images/portfolio/weth-token.webp',
   };
 }

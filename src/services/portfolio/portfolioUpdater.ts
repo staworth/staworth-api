@@ -8,8 +8,9 @@ import { getTotalxDaiBalance, getTotalxDaiValue } from '../blockchain/xdai.js';
 import { getTotalEthBalance, getTotalEthValue } from '../blockchain/eth.js';
 import { getBeefyPositions } from '../blockchain/beefyPositions.js';
 import { getAaveV3Positions } from '../blockchain/aavePositions.js';
+import { getBaseAssetPositions } from '../blockchain/baseAssets.js';
 import { readPortfolioFromStore, writePortfolioToStore, readHistoricPortfolioFromStore, writeHistoricPortfolioToStore } from './portfolioStore.js';
-import { getAaveMetadata, getBeefyMetadata } from './portfolioMetadata.js';
+import { getAaveMetadata, getBaseAssetMetadata, getBeefyMetadata } from './portfolioMetadata.js';
 
 const ACCOUNTS_PATH = path.join(process.cwd(), 'data', 'accounts', 'accounts.json');
 
@@ -392,6 +393,58 @@ async function updateAaveV3Portfolio(portfolio: Portfolio): Promise<void> {
 }
 
 /**
+ * Update direct Base asset positions portfolio
+ */
+async function updateBaseAssetsPortfolio(portfolio: Portfolio): Promise<void> {
+  try {
+    console.log('Updating direct Base asset positions for all wallets');
+
+    const wallets = readAccountAddresses();
+    const allPositions = await Promise.all(wallets.map((address) => getBaseAssetPositions(address)));
+
+    const aggregatedPositions: Record<string, { balance: number; value: number }> = {};
+
+    for (const positions of allPositions) {
+      for (const [tokenName, position] of Object.entries(positions)) {
+        if (!aggregatedPositions[tokenName]) {
+          aggregatedPositions[tokenName] = { balance: 0, value: 0 };
+        }
+        aggregatedPositions[tokenName].balance += position.balance;
+        aggregatedPositions[tokenName].value += position.value;
+      }
+    }
+
+    for (const key of Object.keys(portfolio.positions)) {
+      if (portfolio.positions[key]?.defi_protocol === 'base') {
+        delete portfolio.positions[key];
+      }
+    }
+
+    for (const [tokenName, position] of Object.entries(aggregatedPositions)) {
+      if (position.balance === 0 || position.value === 0) {
+        continue;
+      }
+
+      const metadata = getBaseAssetMetadata(tokenName);
+      portfolio.positions[tokenName] = {
+        name: metadata.name,
+        type: 'defi',
+        exposure: metadata.exposure,
+        defi_protocol: 'base',
+        url: metadata.url,
+        img: metadata.img,
+        balance: Math.round(position.balance * 1000) / 1000,
+        value: Math.round(position.value * 100) / 100,
+      };
+      console.log(`${tokenName}: balance ${portfolio.positions[tokenName]!.balance}, value $${portfolio.positions[tokenName]!.value}`);
+    }
+  } catch (error) {
+    console.error('Error updating direct Base asset positions:', error);
+    throw error;
+  }
+}
+
+/**
  * Aggregate portfolio values by type (governance, defi, stablecoin)
  */
 function aggregatePortfolio(portfolio: Portfolio): HistoricPortfolioEntry {
@@ -492,6 +545,7 @@ async function updatePortfolio(): Promise<Portfolio> {
     updateEthPortfolio(portfolio),
     updateBeefyPositionsPortfolio(portfolio),
     updateAaveV3Portfolio(portfolio),
+    updateBaseAssetsPortfolio(portfolio),
   ];
 
   await Promise.all(tasks);
@@ -506,4 +560,4 @@ async function updatePortfolio(): Promise<Portfolio> {
   return portfolio;
 }
 
-export { updatePortfolio, updateBifiPortfolio, updateGnoPortfolio, updateNxmPortfolio, updateXDaiPortfolio, updateEthPortfolio, updateBeefyPositionsPortfolio, updateAaveV3Portfolio, readPortfolio, writePortfolio };
+export { updatePortfolio, updateBifiPortfolio, updateGnoPortfolio, updateNxmPortfolio, updateXDaiPortfolio, updateEthPortfolio, updateBeefyPositionsPortfolio, updateAaveV3Portfolio, updateBaseAssetsPortfolio, readPortfolio, writePortfolio };
