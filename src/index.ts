@@ -30,6 +30,7 @@ app.get('/', (req: Request, res: Response) => {
       'GET /openapi.json': 'OpenAPI 3.0 specification.',
       'GET /accounts': "Summary of Staworth's onchain accounts.",
       'GET /articles': "Staworth's published articles.",
+      'POST /articles/sync': 'Synchronize cached Beefy articles (requires CRON_SECRET).',
       'GET /links': "Staworth's important links.",
       'GET /portfolio': "Staworth's portfolio holdings.",
       'GET /portfolio/historic': "Historic daily portfolio values by category.",
@@ -70,6 +71,7 @@ app.listen(PORT, () => {
   console.log(`  • GET  /openapi.json                            - OpenAPI 3.0 specification`);
   console.log(`  • GET  /accounts                                - Summary of Staworth's onchain accounts`);
   console.log(`  • GET  /articles                                - Staworth's published articles`);
+  console.log(`  • POST /articles/sync                           - Synchronize cached Beefy articles`);
   console.log(`  • GET  /links                                   - Staworth's important links`);
   console.log(`  • GET  /portfolio                               - Staworth's portfolio holdings`);
   console.log(`  • GET  /portfolio/historic                      - Historic daily portfolio values by category`);

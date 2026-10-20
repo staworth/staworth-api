@@ -95,6 +95,24 @@ export const openApiSpec = {
         }
       }
     },
+    '/articles/sync': {
+      post: {
+        tags: ['Articles'],
+        summary: 'Synchronize cached Beefy articles',
+        responses: {
+          '200': {
+            description: 'Sync summary',
+            content: {
+              'application/json': {
+                schema: { $ref: '#/components/schemas/ArticleSyncSummary' }
+              }
+            }
+          },
+          '401': { description: 'Unauthorized' },
+          '500': { description: 'Beefy source or article store failed' }
+        }
+      }
+    },
     '/links': {
       get: {
         tags: ['Links'],
@@ -489,6 +507,18 @@ export const openApiSpec = {
           },
           required: ['link', 'title', 'date', 'categories', 'description', 'image']
         },
+      ArticleSyncSummary: {
+        type: 'object',
+        properties: {
+          ok: { type: 'boolean' },
+          scanned: { type: 'integer' },
+          created: { type: 'integer' },
+          updated: { type: 'integer' },
+          unchanged: { type: 'integer' },
+          failed: { type: 'integer' }
+        },
+        required: ['ok', 'scanned', 'created', 'updated', 'unchanged', 'failed']
+      },
       Link: {
         type: 'object',
         properties: {

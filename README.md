@@ -39,6 +39,7 @@ Runs the test suite using Vitest, including blockchain integration and portfolio
 | GET | `/openapi.json` | OpenAPI 3.0 specification (for Swagger/Redoc/tooling import) |
 | GET | `/accounts` | Summary of Staworth's onchain accounts |
 | GET | `/articles` | Staworth's published articles |
+| POST | `/articles/sync` | Synchronize Beefy articles (requires `x-cron-secret`) |
 | GET | `/links` | Staworth's important links |
 | GET | `/portfolio` | Staworth's portfolio positions from Redis |
 | POST | `/portfolio/update` | Trigger portfolio update (requires `x-cron-secret` header) |
@@ -91,6 +92,26 @@ DATABARN_API_KEY=your-databarn-api-key
 COINGECKO_API_KEY=your-coingecko-api-key
 NXM_STAKING_TOKEN_ID=your-nxm-staking-token-id
 ```
+
+## Beefy Article Sync
+
+`/articles` returns a cached catalogue, never live-scraped data. Static entries in
+`data/articles/articles.json` are preserved, while Beefy entries are imported from
+Beefy's Gatsby page-data endpoint and stored in Upstash under their canonical URL.
+
+Vercel runs `POST /articles/sync` daily at 2 AM UTC using its `CRON_SECRET` bearer
+authentication. The first scheduled run performs
+the initial backfill; later runs are idempotent and update only changed source metadata.
+Run a manual sync with the same secret used by the scheduler:
+
+```bash
+curl -X POST https://your-api-domain.example/articles/sync \
+  -H "x-cron-secret: $CRON_SECRET"
+```
+
+The response reports `scanned`, `created`, `updated`, `unchanged`, and `failed`.
+The job retries transient requests, rate limits page requests, and only writes the new
+index after a successful listing crawl, so a failed run leaves the prior cached index intact.
 
 ## Deployment
 

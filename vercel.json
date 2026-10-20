@@ -16,6 +16,10 @@
     {
       "path": "/portfolio/update",
       "schedule": "0 1 * * *"
+    },
+    {
+      "path": "/articles/sync",
+      "schedule": "0 2 * * *"
     }
   ]
 }
