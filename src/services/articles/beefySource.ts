@@ -3,6 +3,7 @@ import type { ImportedArticle } from './articleStore.js';
 
 const BEEFY_ORIGIN = 'https://beefy.com';
 const LISTING_PATH = '/page-data/articles';
+export const BEEFY_ARTICLE_CUTOFF = '2024-05-30T00:00:00.000Z';
 
 export interface BeefySource {
   fetchArticles(): Promise<BeefyFetchResult>;
@@ -36,6 +37,7 @@ export class BeefyGatsbySource implements BeefySource {
       for (const edge of edges) {
         try {
           const article = toImportedArticle(edge);
+          if (article.date < BEEFY_ARTICLE_CUTOFF) continue;
           byUrl.set(article.link, article);
         } catch (error) {
           failed += 1;

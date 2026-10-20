@@ -98,6 +98,8 @@ NXM_STAKING_TOKEN_ID=your-nxm-staking-token-id
 `/articles` returns a cached catalogue, never live-scraped data. Static entries in
 `data/articles/articles.json` are preserved, while Beefy entries are imported from
 Beefy's Gatsby page-data endpoint and stored in Upstash under their canonical URL.
+Imported Beefy posts published before 30 May 2024 are excluded; existing cached imports
+before that cutoff are deleted during the next sync.
 
 Vercel runs `POST /articles/sync` daily at 2 AM UTC using its `CRON_SECRET` bearer
 authentication. The first scheduled run performs
@@ -109,7 +111,7 @@ curl -X POST https://your-api-domain.example/articles/sync \
   -H "x-cron-secret: $CRON_SECRET"
 ```
 
-The response reports `scanned`, `created`, `updated`, `unchanged`, and `failed`.
+The response reports `scanned`, `created`, `updated`, `unchanged`, `deleted`, and `failed`.
 The job retries transient requests, rate limits page requests, and only writes the new
 index after a successful listing crawl, so a failed run leaves the prior cached index intact.
 

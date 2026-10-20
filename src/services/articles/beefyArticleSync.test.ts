@@ -5,14 +5,14 @@ import { canonicalizeArticleUrl, normalizeArticle, normalizeCategories } from '.
 import type { ArticleStore, ImportedArticle } from './articleStore.js';
 import { buildArticleCatalogue } from './articleCatalogue.js';
 
-function listing(slug: string, title = 'QiDao Product'): object {
+function listing(slug: string, title = 'QiDao Product', date = 'March 6, 2026'): object {
   return {
     result: {
       data: {
         allMarkdownRemark: {
           edges: [{ node: { fields: { slug }, frontmatter: {
             title,
-            date: 'March 6, 2026',
+            date,
             short_description: 'A QiDao integration.',
             tags: [' Partners ', 'partners'],
             header_image: { childImageSharp: { gatsbyImageData: { images: { fallback: { src: '/cover.png' } } } } },
@@ -56,6 +56,25 @@ describe('Beefy article sync', () => {
     expect((await syncBeefyArticles(source, store)).unchanged).toBe(1);
     expect(Object.keys(store.articles)).toEqual(['https://beefy.com/articles/example/']);
     expect(canonicalizeArticleUrl('https://beefy.com/articles/example?x=1')).toBe('https://beefy.com/articles/example/');
+  });
+
+  it('excludes and prunes imported Beefy articles before 30 May 2024', async () => {
+    const fetcher = async (url: string): Promise<Response> => {
+      if (url.includes('/page/2/')) return new Response('', { status: 404 });
+      return new Response(JSON.stringify(listing('legacy', 'Legacy', 'May 29, 2024')), { status: 200 });
+    };
+    expect((await new BeefyGatsbySource(fetcher, 10, 0).fetchArticles()).articles).toEqual([]);
+
+    const oldUrl = 'https://beefy.com/articles/legacy/';
+    const store = new MemoryStore({
+      [oldUrl]: {
+        link: oldUrl, title: 'Legacy', date: '2024-05-29T00:00:00.000Z', description: 'Old',
+        image: 'https://beefy.com/old.png', categories: ['beefy'], source: 'beefy',
+      },
+    });
+    const summary = await syncBeefyArticles({ fetchArticles: async () => ({ articles: [], failed: 0 }) }, store);
+    expect(summary.deleted).toBe(1);
+    expect(store.articles).toEqual({});
   });
 
   it('normalizes categories and returns only the public categories response shape', () => {

@@ -1,4 +1,4 @@
-import { BeefyGatsbySource, type BeefySource } from './beefySource.js';
+import { BEEFY_ARTICLE_CUTOFF, BeefyGatsbySource, type BeefySource } from './beefySource.js';
 import { UpstashArticleStore, type ArticleStore, type ImportedArticle } from './articleStore.js';
 
 export interface ArticleSyncSummary {
@@ -6,6 +6,7 @@ export interface ArticleSyncSummary {
   created: number;
   updated: number;
   unchanged: number;
+  deleted: number;
   failed: number;
 }
 
@@ -16,7 +17,14 @@ export async function syncBeefyArticles(
   const result = await source.fetchArticles();
   const existing = await store.readBeefyArticles();
   const next = { ...existing };
-  const summary: ArticleSyncSummary = { scanned: result.articles.length, created: 0, updated: 0, unchanged: 0, failed: result.failed };
+  const summary: ArticleSyncSummary = { scanned: result.articles.length, created: 0, updated: 0, unchanged: 0, deleted: 0, failed: result.failed };
+
+  for (const [url, article] of Object.entries(existing)) {
+    if (article.source === 'beefy' && article.date < BEEFY_ARTICLE_CUTOFF) {
+      delete next[url];
+      summary.deleted += 1;
+    }
+  }
 
   for (const article of result.articles) {
     const previous = existing[article.link];

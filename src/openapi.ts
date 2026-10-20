@@ -515,9 +515,10 @@ export const openApiSpec = {
           created: { type: 'integer' },
           updated: { type: 'integer' },
           unchanged: { type: 'integer' },
+          deleted: { type: 'integer' },
           failed: { type: 'integer' }
         },
-        required: ['ok', 'scanned', 'created', 'updated', 'unchanged', 'failed']
+        required: ['ok', 'scanned', 'created', 'updated', 'unchanged', 'deleted', 'failed']
       },
       Link: {
         type: 'object',
