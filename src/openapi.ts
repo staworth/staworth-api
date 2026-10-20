@@ -497,10 +497,10 @@ export const openApiSpec = {
           properties: {
             link: { type: 'string' },
             title: { type: 'string' },
-            date: { type: 'string' },
+            date: { type: 'string', example: '22 May 2026' },
             categories: {
               type: 'array',
-              items: { type: 'string' }
+              items: { type: 'string', example: 'BEEFY' }
             },
             description: { type: 'string' },
             image: { type: 'string' }

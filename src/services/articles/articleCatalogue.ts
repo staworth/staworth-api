@@ -19,5 +19,20 @@ export function buildArticleCatalogue(
     articles.set(canonicalizeArticleUrl(article.link), article);
   }
 
-  return [...articles.values()].sort((a, b) => b.date.localeCompare(a.date));
+  return [...articles.values()]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .map(formatArticleForResponse);
+}
+
+function formatArticleForResponse(article: Article): Article {
+  return {
+    ...article,
+    date: new Intl.DateTimeFormat('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'UTC',
+    }).format(new Date(article.date)),
+    categories: article.categories.map(category => category.toUpperCase()),
+  };
 }

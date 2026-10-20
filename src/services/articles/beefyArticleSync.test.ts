@@ -88,6 +88,7 @@ describe('Beefy article sync', () => {
     );
     expect(catalogue).toHaveLength(2);
     expect(catalogue.every(article => Array.isArray(article.categories) && !('category' in article) && !('source' in article))).toBe(true);
-    expect(catalogue.find(article => article.title === 'Manual')).toMatchObject({ categories: ['staworth'], description: 'Kept' });
+    expect(catalogue.find(article => article.title === 'Imported')).toMatchObject({ date: '2 January 2026', categories: ['BEEFY'] });
+    expect(catalogue.find(article => article.title === 'Manual')).toMatchObject({ categories: ['STAWORTH'], description: 'Kept' });
   });
 });
