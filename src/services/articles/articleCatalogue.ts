@@ -1,5 +1,5 @@
 import type { Article } from '../../types/article.js';
-import { canonicalizeArticleUrl, normalizeArticle, type ArticleInput } from './articleNormalizer.js';
+import { canonicalizeArticleUrl, normalizeArticle, normalizeCategories, type ArticleInput } from './articleNormalizer.js';
 import type { ImportedArticle } from './articleStore.js';
 
 /** Combines editorial records with the synced Beefy cache without exposing storage metadata. */
@@ -33,6 +33,6 @@ function formatArticleForResponse(article: Article): Article {
       year: 'numeric',
       timeZone: 'UTC',
     }).format(new Date(article.date)),
-    categories: article.categories.map(category => category.toUpperCase()),
+    categories: normalizeCategories(article.categories).map(category => category.toUpperCase()),
   };
 }

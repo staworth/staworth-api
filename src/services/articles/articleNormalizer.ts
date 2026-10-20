@@ -5,6 +5,10 @@ export type ArticleInput = Omit<Article, 'date' | 'categories'> & {
   categories?: unknown;
 };
 
+const CATEGORY_ALIASES: Record<string, string> = {
+  'accountant quits': 'ocf institute',
+};
+
 export function canonicalizeArticleUrl(value: string): string {
   const url = new URL(value);
   url.hash = '';
@@ -19,6 +23,7 @@ export function normalizeCategories(categories: unknown, required: string[] = []
   return [...new Set([...required, ...values]
     .filter((category): category is string => typeof category === 'string')
     .map(category => category.trim().toLowerCase())
+    .map(category => CATEGORY_ALIASES[category] ?? category)
     .filter(Boolean))];
 }
 

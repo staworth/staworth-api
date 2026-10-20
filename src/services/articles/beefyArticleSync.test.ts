@@ -78,17 +78,17 @@ describe('Beefy article sync', () => {
   });
 
   it('normalizes categories and returns only the public categories response shape', () => {
-    expect(normalizeCategories([' BEEFY ', 'beefy', 'Partners'])).toEqual(['beefy', 'partners']);
+    expect(normalizeCategories([' BEEFY ', 'beefy', 'Partners', 'Accountant Quits'])).toEqual(['beefy', 'partners', 'ocf institute']);
     expect(normalizeArticle({ link: 'https://example.com/a', title: 'A', date: '25 March 2026', description: 'D', image: '/a.png', categories: [' STAWORTH '] })).toMatchObject({
       date: '2026-03-25T00:00:00.000Z', categories: ['staworth'],
     });
     const catalogue = buildArticleCatalogue(
       [{ link: 'https://example.com/manual', title: 'Manual', date: '2026-01-01', description: 'Kept', image: '/manual.png', categories: ['STAWORTH'] }],
-      { 'https://beefy.com/articles/imported/': { link: 'https://beefy.com/articles/imported/', title: 'Imported', date: '2026-01-02T00:00:00.000Z', description: 'Synced', image: 'https://beefy.com/imported.png', categories: ['beefy'], source: 'beefy' } },
+      { 'https://beefy.com/articles/imported/': { link: 'https://beefy.com/articles/imported/', title: 'Imported', date: '2026-01-02T00:00:00.000Z', description: 'Synced', image: 'https://beefy.com/imported.png', categories: ['beefy', 'accountant quits'], source: 'beefy' } },
     );
     expect(catalogue).toHaveLength(2);
     expect(catalogue.every(article => Array.isArray(article.categories) && !('category' in article) && !('source' in article))).toBe(true);
-    expect(catalogue.find(article => article.title === 'Imported')).toMatchObject({ date: '2 January 2026', categories: ['BEEFY'] });
+    expect(catalogue.find(article => article.title === 'Imported')).toMatchObject({ date: '2 January 2026', categories: ['BEEFY', 'OCF INSTITUTE'] });
     expect(catalogue.find(article => article.title === 'Manual')).toMatchObject({ categories: ['STAWORTH'], description: 'Kept' });
   });
 });
